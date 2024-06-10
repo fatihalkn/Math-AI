@@ -13,6 +13,10 @@
 		3D51439F2C11BEE200C9A3F0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D51439D2C11BEE200C9A3F0 /* LaunchScreen.storyboard */; };
 		3D5143A72C11C08700C9A3F0 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5143A62C11C08700C9A3F0 /* CameraViewController.swift */; };
 		3D5143B02C11C96E00C9A3F0 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5143AF2C11C96E00C9A3F0 /* CameraView.swift */; };
+		3D5143B72C17265D00C9A3F0 /* ScanningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5143B62C17265D00C9A3F0 /* ScanningView.swift */; };
+		3D5143B92C1726C800C9A3F0 /* ScanningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5143B82C1726C800C9A3F0 /* ScanningViewController.swift */; };
+		3D5143BB2C173FCD00C9A3F0 /* ScanOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5143BA2C173FCD00C9A3F0 /* ScanOptions.swift */; };
+		3D5143BD2C173FE600C9A3F0 /* CameraViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5143BC2C173FE600C9A3F0 /* CameraViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,10 @@
 		3D5143A02C11BEE200C9A3F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3D5143A62C11C08700C9A3F0 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		3D5143AF2C11C96E00C9A3F0 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
+		3D5143B62C17265D00C9A3F0 /* ScanningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanningView.swift; sourceTree = "<group>"; };
+		3D5143B82C1726C800C9A3F0 /* ScanningViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanningViewController.swift; sourceTree = "<group>"; };
+		3D5143BA2C173FCD00C9A3F0 /* ScanOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanOptions.swift; sourceTree = "<group>"; };
+		3D5143BC2C173FE600C9A3F0 /* CameraViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +85,7 @@
 		3D5143A92C11C91700C9A3F0 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				3D5143B12C17260A00C9A3F0 /* Scanning */,
 				3D5143AA2C11C91E00C9A3F0 /* Camera */,
 			);
 			path = Scenes;
@@ -112,6 +121,7 @@
 		3D5143AD2C11C95900C9A3F0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				3D5143BA2C173FCD00C9A3F0 /* ScanOptions.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -119,8 +129,50 @@
 		3D5143AE2C11C95E00C9A3F0 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				3D5143BC2C173FE600C9A3F0 /* CameraViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		3D5143B12C17260A00C9A3F0 /* Scanning */ = {
+			isa = PBXGroup;
+			children = (
+				3D5143B52C17263600C9A3F0 /* Model */,
+				3D5143B42C17262F00C9A3F0 /* ViewController */,
+				3D5143B32C17262600C9A3F0 /* ViewModel */,
+				3D5143B22C17261700C9A3F0 /* View */,
+			);
+			path = Scanning;
+			sourceTree = "<group>";
+		};
+		3D5143B22C17261700C9A3F0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3D5143B62C17265D00C9A3F0 /* ScanningView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3D5143B32C17262600C9A3F0 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		3D5143B42C17262F00C9A3F0 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				3D5143B82C1726C800C9A3F0 /* ScanningViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		3D5143B52C17263600C9A3F0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,8 +245,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D5143B72C17265D00C9A3F0 /* ScanningView.swift in Sources */,
+				3D5143B92C1726C800C9A3F0 /* ScanningViewController.swift in Sources */,
+				3D5143BB2C173FCD00C9A3F0 /* ScanOptions.swift in Sources */,
 				3D5143932C11BEE100C9A3F0 /* AppDelegate.swift in Sources */,
 				3D5143952C11BEE100C9A3F0 /* SceneDelegate.swift in Sources */,
+				3D5143BD2C173FE600C9A3F0 /* CameraViewModel.swift in Sources */,
 				3D5143A72C11C08700C9A3F0 /* CameraViewController.swift in Sources */,
 				3D5143B02C11C96E00C9A3F0 /* CameraView.swift in Sources */,
 			);
