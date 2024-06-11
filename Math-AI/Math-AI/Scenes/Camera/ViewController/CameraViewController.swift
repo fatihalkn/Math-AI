@@ -87,6 +87,17 @@ class CameraViewController: UIViewController {
         cameraView.shutterButton.addTarget(self, action: #selector(didTapTakePhoto), for: .touchUpInside)
         cameraView.galleryButton.addTarget(self, action: #selector(didTapGalleryButton), for: .touchUpInside)
         cameraView.flashButton.addTarget(self, action: #selector(didTapFlashButton), for: .touchUpInside)
+        cameraView.translateButton.addTarget(self, action: #selector(didTapTranslateButton), for: .touchUpInside)
+    }
+    
+    @objc func didTapTranslateButton() {
+        let vc = LanguagesViewController()
+        if let sheet = vc.sheetPresentationController {
+            sheet.detents = [.medium(), .large()]
+            sheet.prefersGrabberVisible = false
+        }
+        
+        present(vc, animated: true)
     }
     
     @objc func didTapTakePhoto() {
@@ -211,10 +222,13 @@ extension CameraViewController: UIPickerViewDataSource, UIPickerViewDelegate {
         switch selectedOption.options {
         case "Çevir":
             cameraView.shutterImageView.image = .cameraTranslate
+            cameraView.translateView.isHidden = false
         case "Matematik":
             cameraView.shutterImageView.image = .cameraMath
+            cameraView.translateView.isHidden = true
         case "Genel":
             cameraView.shutterImageView.image = .cameraGeneral
+            cameraView.translateView.isHidden = true
         default:
             break
         }

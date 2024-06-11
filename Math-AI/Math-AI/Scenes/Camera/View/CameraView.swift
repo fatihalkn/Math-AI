@@ -31,6 +31,9 @@ class CameraView:UIView {
         
         shutterButton.layer.cornerRadius = shutterButton.frame.width / 2
         shutterButton.layer.masksToBounds = true
+        
+        translateView.layer.cornerRadius = translateView.frame.height / 2
+        translateView.layer.masksToBounds = true
         previewLayer.frame = self.bounds
     }
     
@@ -91,18 +94,29 @@ class CameraView:UIView {
     let translateLabel: UILabel = {
         let label = UILabel()
         label.text = "Çevir"
-        label.font = .systemFont(ofSize: 18)
+        label.font = .systemFont(ofSize: 12, weight: .regular)
+        label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = .white
+        label.textColor = .lightText
         return label
     }()
     
     let translateButton: UIButton = {
         let button = UIButton()
-        button.setTitle(<#T##title: String?##String?#>, for: <#T##UIControl.State#>)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle("deneme", for: .normal)
+        button.backgroundColor = .black
         return button
     }()
     
+    let translateButtonImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = .expandDown
+        imageView.tintColor = .white
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.contentMode = .scaleAspectFit
+        return imageView
+    }()
     
 }
 
@@ -115,6 +129,10 @@ extension CameraView {
         addSubview(galleryButton)
         addSubview(flashButton)
         addSubview(pickerView)
+        addSubview(translateView)
+        translateView.addSubview(translateLabel)
+        translateView.addSubview(translateButton)
+        translateView.addSubview(translateButtonImageView)
         shutterButton.addSubview(shutterImageView)
         
         
@@ -142,9 +160,27 @@ extension CameraView {
             pickerView.centerXAnchor.constraint(equalTo: shutterButton.centerXAnchor),
             pickerView.centerYAnchor.constraint(equalTo: shutterButton.centerYAnchor,constant: -100),
             pickerView.heightAnchor.constraint(equalTo: safeAreaLayoutGuide.widthAnchor, multiplier: 1),
-            pickerView.widthAnchor.constraint(equalToConstant: 90)
+            pickerView.widthAnchor.constraint(equalToConstant: 90),
             
+            translateView.bottomAnchor.constraint(equalTo: shutterButton.topAnchor,constant: -95),
+            translateView.leadingAnchor.constraint(lessThanOrEqualTo:safeAreaLayoutGuide.leadingAnchor, constant: 150),
+            translateView.trailingAnchor.constraint(greaterThanOrEqualTo:safeAreaLayoutGuide.trailingAnchor, constant: -150),
+            translateView.heightAnchor.constraint(equalToConstant: 30),
             
+            translateLabel.centerXAnchor.constraint(equalTo: translateView.centerXAnchor,constant: -50),
+            translateLabel.centerYAnchor.constraint(equalTo: translateView.centerYAnchor),
+            translateLabel.heightAnchor.constraint(lessThanOrEqualToConstant: 30),
+            translateLabel.widthAnchor.constraint(greaterThanOrEqualToConstant: 30),
+            
+            translateButton.topAnchor.constraint(equalTo: translateView.topAnchor),
+            translateButton.leadingAnchor.constraint(equalTo: translateLabel.leadingAnchor,constant: 35),
+            translateButton.trailingAnchor.constraint(equalTo: translateButtonImageView.leadingAnchor),
+            translateButton.heightAnchor.constraint(lessThanOrEqualToConstant: 30),
+            
+            translateButtonImageView.topAnchor.constraint(equalTo: translateButton.topAnchor),
+            translateButtonImageView.trailingAnchor.constraint(equalTo: translateView.trailingAnchor),
+            translateButtonImageView.leadingAnchor.constraint(equalTo: translateButton.trailingAnchor),
+            translateButtonImageView.heightAnchor.constraint(equalToConstant: 30)
             
         ])
     }
