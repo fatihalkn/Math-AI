@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		3D3B84EE2C17CB23002AC3C2 /* LanguagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3B84ED2C17CB23002AC3C2 /* LanguagesViewController.swift */; };
+		3D3B84F52C186677002AC3C2 /* LanguagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3B84F42C186677002AC3C2 /* LanguagesView.swift */; };
+		3D3B84F72C186777002AC3C2 /* LanguagesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3B84F62C186777002AC3C2 /* LanguagesModel.swift */; };
+		3D3B84F92C18679F002AC3C2 /* LanguagesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3B84F82C18679F002AC3C2 /* LanguagesViewModel.swift */; };
+		3D3B84FD2C1873AD002AC3C2 /* LanguagesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3B84FC2C1873AD002AC3C2 /* LanguagesCollectionViewCell.swift */; };
+		3D3B85002C18B397002AC3C2 /* CropViewController in Frameworks */ = {isa = PBXBuildFile; productRef = 3D3B84FF2C18B397002AC3C2 /* CropViewController */; };
 		3D5143932C11BEE100C9A3F0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5143922C11BEE100C9A3F0 /* AppDelegate.swift */; };
 		3D5143952C11BEE100C9A3F0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5143942C11BEE100C9A3F0 /* SceneDelegate.swift */; };
 		3D51439C2C11BEE200C9A3F0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D51439B2C11BEE200C9A3F0 /* Assets.xcassets */; };
@@ -22,6 +27,10 @@
 
 /* Begin PBXFileReference section */
 		3D3B84ED2C17CB23002AC3C2 /* LanguagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguagesViewController.swift; sourceTree = "<group>"; };
+		3D3B84F42C186677002AC3C2 /* LanguagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguagesView.swift; sourceTree = "<group>"; };
+		3D3B84F62C186777002AC3C2 /* LanguagesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguagesModel.swift; sourceTree = "<group>"; };
+		3D3B84F82C18679F002AC3C2 /* LanguagesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguagesViewModel.swift; sourceTree = "<group>"; };
+		3D3B84FC2C1873AD002AC3C2 /* LanguagesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguagesCollectionViewCell.swift; sourceTree = "<group>"; };
 		3D51438F2C11BEE100C9A3F0 /* Math-AI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Math-AI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D5143922C11BEE100C9A3F0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3D5143942C11BEE100C9A3F0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -41,6 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D3B85002C18B397002AC3C2 /* CropViewController in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -50,17 +60,45 @@
 		3D3B84EB2C17CAEB002AC3C2 /* Languages */ = {
 			isa = PBXGroup;
 			children = (
-				3D3B84EC2C17CB0E002AC3C2 /* Controller */,
+				3D3B84F12C18659D002AC3C2 /* Model */,
+				3D3B84F02C186596002AC3C2 /* ViewModel */,
+				3D3B84EF2C186588002AC3C2 /* View */,
+				3D3B84EC2C17CB0E002AC3C2 /* ViewController */,
 			);
 			path = Languages;
 			sourceTree = "<group>";
 		};
-		3D3B84EC2C17CB0E002AC3C2 /* Controller */ = {
+		3D3B84EC2C17CB0E002AC3C2 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
 				3D3B84ED2C17CB23002AC3C2 /* LanguagesViewController.swift */,
 			);
-			path = Controller;
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		3D3B84EF2C186588002AC3C2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3D3B84F42C186677002AC3C2 /* LanguagesView.swift */,
+				3D3B84FC2C1873AD002AC3C2 /* LanguagesCollectionViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3D3B84F02C186596002AC3C2 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				3D3B84F82C18679F002AC3C2 /* LanguagesViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		3D3B84F12C18659D002AC3C2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3D3B84F62C186777002AC3C2 /* LanguagesModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		3D5143862C11BEE100C9A3F0 = {
@@ -210,6 +248,9 @@
 			dependencies = (
 			);
 			name = "Math-AI";
+			packageProductDependencies = (
+				3D3B84FF2C18B397002AC3C2 /* CropViewController */,
+			);
 			productName = "Math-AI";
 			productReference = 3D51438F2C11BEE100C9A3F0 /* Math-AI.app */;
 			productType = "com.apple.product-type.application";
@@ -238,6 +279,9 @@
 				Base,
 			);
 			mainGroup = 3D5143862C11BEE100C9A3F0;
+			packageReferences = (
+				3D3B84FE2C18B397002AC3C2 /* XCRemoteSwiftPackageReference "TOCropViewController" */,
+			);
 			productRefGroup = 3D5143902C11BEE100C9A3F0 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -266,12 +310,16 @@
 			files = (
 				3D5143B72C17265D00C9A3F0 /* ScanningView.swift in Sources */,
 				3D5143B92C1726C800C9A3F0 /* ScanningViewController.swift in Sources */,
+				3D3B84F72C186777002AC3C2 /* LanguagesModel.swift in Sources */,
 				3D5143BB2C173FCD00C9A3F0 /* ScanOptions.swift in Sources */,
 				3D5143932C11BEE100C9A3F0 /* AppDelegate.swift in Sources */,
 				3D5143952C11BEE100C9A3F0 /* SceneDelegate.swift in Sources */,
 				3D5143BD2C173FE600C9A3F0 /* CameraViewModel.swift in Sources */,
 				3D5143A72C11C08700C9A3F0 /* CameraViewController.swift in Sources */,
 				3D5143B02C11C96E00C9A3F0 /* CameraView.swift in Sources */,
+				3D3B84FD2C1873AD002AC3C2 /* LanguagesCollectionViewCell.swift in Sources */,
+				3D3B84F52C186677002AC3C2 /* LanguagesView.swift in Sources */,
+				3D3B84F92C18679F002AC3C2 /* LanguagesViewModel.swift in Sources */,
 				3D3B84EE2C17CB23002AC3C2 /* LanguagesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -487,6 +535,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		3D3B84FE2C18B397002AC3C2 /* XCRemoteSwiftPackageReference "TOCropViewController" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/TimOliver/TOCropViewController.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.7.4;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3D3B84FF2C18B397002AC3C2 /* CropViewController */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3D3B84FE2C18B397002AC3C2 /* XCRemoteSwiftPackageReference "TOCropViewController" */;
+			productName = CropViewController;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 3D5143872C11BEE100C9A3F0 /* Project object */;
 }

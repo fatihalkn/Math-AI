@@ -34,6 +34,7 @@ class CameraView:UIView {
         
         translateView.layer.cornerRadius = translateView.frame.height / 2
         translateView.layer.masksToBounds = true
+        
         previewLayer.frame = self.bounds
     }
     
@@ -86,7 +87,7 @@ class CameraView:UIView {
     
     let translateView: UIView = {
         let view = UIView()
-        view.backgroundColor = .black
+        view.backgroundColor = .clear
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -104,8 +105,8 @@ class CameraView:UIView {
     let translateButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("deneme", for: .normal)
-        button.backgroundColor = .black
+        button.setTitle("Türkçe", for: .normal)
+        button.backgroundColor = .clear
         return button
     }()
     
@@ -118,6 +119,26 @@ class CameraView:UIView {
         return imageView
     }()
     
+    let retakeButton: UIButton = {
+        let retakeButton = UIButton()
+        retakeButton.setTitle("Tekrar Çek", for: .normal)
+        retakeButton.backgroundColor = .clear
+        retakeButton.titleLabel?.font = .systemFont(ofSize: 18, weight: .black)
+        retakeButton.tintColor = .white
+        retakeButton.translatesAutoresizingMaskIntoConstraints = false
+        return retakeButton
+    }()
+    
+    let scanButton: UIButton = {
+        let scanButton = UIButton()
+        scanButton.setTitle("Tara", for: .normal)
+        scanButton.titleLabel?.font = .systemFont(ofSize: 18, weight: .black)
+        scanButton.backgroundColor = .main
+        scanButton.tintColor = .white
+        scanButton.translatesAutoresizingMaskIntoConstraints = false
+        return scanButton
+    }()
+            
 }
 
 //MARK: - SetupUI
@@ -163,8 +184,8 @@ extension CameraView {
             pickerView.widthAnchor.constraint(equalToConstant: 90),
             
             translateView.bottomAnchor.constraint(equalTo: shutterButton.topAnchor,constant: -95),
-            translateView.leadingAnchor.constraint(lessThanOrEqualTo:safeAreaLayoutGuide.leadingAnchor, constant: 150),
-            translateView.trailingAnchor.constraint(greaterThanOrEqualTo:safeAreaLayoutGuide.trailingAnchor, constant: -150),
+            translateView.leadingAnchor.constraint(lessThanOrEqualTo:safeAreaLayoutGuide.leadingAnchor, constant: 120),
+            translateView.trailingAnchor.constraint(greaterThanOrEqualTo:safeAreaLayoutGuide.trailingAnchor, constant: -120),
             translateView.heightAnchor.constraint(equalToConstant: 30),
             
             translateLabel.centerXAnchor.constraint(equalTo: translateView.centerXAnchor,constant: -50),
@@ -180,7 +201,9 @@ extension CameraView {
             translateButtonImageView.topAnchor.constraint(equalTo: translateButton.topAnchor),
             translateButtonImageView.trailingAnchor.constraint(equalTo: translateView.trailingAnchor),
             translateButtonImageView.leadingAnchor.constraint(equalTo: translateButton.trailingAnchor),
-            translateButtonImageView.heightAnchor.constraint(equalToConstant: 30)
+            translateButtonImageView.heightAnchor.constraint(equalToConstant: 30),
+            
+            
             
         ])
     }

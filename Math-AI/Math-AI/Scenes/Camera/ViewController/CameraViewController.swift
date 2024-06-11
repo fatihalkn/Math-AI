@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 import AVFoundation
+import CropViewController
 
 
 class CameraViewController: UIViewController {
@@ -35,6 +36,7 @@ class CameraViewController: UIViewController {
         super.loadView()
         view = cameraView
     }
+    
     
     private func checkCameraPermissions() {
         switch AVCaptureDevice.authorizationStatus(for: .video) {
@@ -92,9 +94,12 @@ class CameraViewController: UIViewController {
     
     @objc func didTapTranslateButton() {
         let vc = LanguagesViewController()
+        vc.delegate = self
         if let sheet = vc.sheetPresentationController {
             sheet.detents = [.medium(), .large()]
             sheet.prefersGrabberVisible = false
+            sheet.prefersScrollingExpandsWhenScrolledToEdge = false
+            sheet.largestUndimmedDetentIdentifier = .medium
         }
         
         present(vc, animated: true)
@@ -169,12 +174,62 @@ extension CameraViewController: AVCapturePhotoCaptureDelegate {
         guard let data = photo.fileDataRepresentation() else { return }
         let image = UIImage(data: data)
         session?.stopRunning()
-        let imgeView = UIImageView(image: image)
-        imgeView.contentMode = .scaleAspectFill
-        imgeView.frame = cameraView.bounds
-        cameraView.addSubview(imgeView)
+        DispatchQueue.main.async { [weak self] in
+            guard let self else { return }
+            let imgeView = UIImageView(image: image)
+            imgeView.contentMode = .scaleAspectFill
+            imgeView.frame = cameraView.bounds
+            imgeView.addSubview(cameraView.retakeButton)
+            imgeView.addSubview(cameraView.scanButton)
+            showCrop(image: image ?? .cameraGeneral)
+            cameraView.scanButton.layer.cornerRadius = 25
+            cameraView.scanButton.layer.masksToBounds = true
+            
+            cameraView.retakeButton.layer.cornerRadius = 25
+            cameraView.retakeButton.layer.masksToBounds = true
+            
+            cameraView.addSubview(imgeView)
+            
+            NSLayoutConstraint.activate([
+                        
+                cameraView.retakeButton.leadingAnchor.constraint(equalTo: cameraView.leadingAnchor, constant: 20),
+                cameraView.retakeButton.bottomAnchor.constraint(equalTo: cameraView.safeAreaLayoutGuide.bottomAnchor, constant: -100),
+                cameraView.retakeButton.heightAnchor.constraint(equalToConstant: 50),
+                cameraView.retakeButton.widthAnchor.constraint(equalToConstant: 120),
+                    
+                cameraView.scanButton.trailingAnchor.constraint(equalTo: cameraView.trailingAnchor, constant: -20),
+                cameraView.scanButton.bottomAnchor.constraint(equalTo: cameraView.safeAreaLayoutGuide.bottomAnchor, constant: -100),
+                cameraView.scanButton.heightAnchor.constraint(equalToConstant: 50),
+                cameraView.scanButton.widthAnchor.constraint(equalToConstant: 120)
+            ])
+        }
+        
+    }
+    
+    func showCrop(image: UIImage) {
+        let vc = CropViewController(croppingStyle: .default, image: image)
+        vc.aspectRatioPreset = .presetSquare
+        vc.aspectRatioLockEnabled = true
+        vc.toolbarPosition = .bottom
+        vc.doneButtonTitle = "Devam"
+        vc.cancelButtonTitle = "İptal"
+        vc.delegate = self
+        present(vc, animated: true)
     }
 }
+
+//MARK: - CropViewControllerDelegate
+extension CameraViewController: CropViewControllerDelegate {
+    func cropViewController(_ cropViewController: CropViewController, didFinishCancelled cancelled: Bool) {
+        cropViewController.dismiss(animated: true)
+    }
+    
+    func cropViewController(_ cropViewController: CropViewController, didCropToImage image: UIImage, withRect cropRect: CGRect, angle: Int) {
+        cropViewController.dismiss(animated: true)
+        print("Crop Yapıldı")
+    }
+}
+
 //MARK: - PickerView Configure
 extension CameraViewController: UIPickerViewDataSource, UIPickerViewDelegate {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -241,3 +296,11 @@ extension CameraViewController: UIPickerViewDataSource, UIPickerViewDelegate {
     
 }
 
+//MARK: - LanguagesViewControllerProtocol
+extension CameraViewController: LanguagesViewControllerProtocol {
+    func didSelectLanguage(language: String) {
+        cameraView.translateButton.setTitle(language, for: .normal)
+    }
+    
+    
+}
