@@ -9,6 +9,7 @@ import Foundation
 
 class CameraViewModel {
     
+    var scanOptionTitle: String = ""
     var scanOptions: [ScanOptions] = [.init(options: "Çevir"),
                                       .init(options: "Matematik"),
                                       .init(options: "Genel")]

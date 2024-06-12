@@ -35,6 +35,11 @@ class CameraView:UIView {
         translateView.layer.cornerRadius = translateView.frame.height / 2
         translateView.layer.masksToBounds = true
         
+        scanButton.layer.cornerRadius = 25
+        scanButton.layer.masksToBounds = true
+        retakeButton.layer.cornerRadius = 25
+        retakeButton.layer.masksToBounds = true
+        
         previewLayer.frame = self.bounds
     }
     
@@ -138,6 +143,14 @@ class CameraView:UIView {
         scanButton.translatesAutoresizingMaskIntoConstraints = false
         return scanButton
     }()
+    
+    let croppedImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.contentMode = .scaleAspectFill
+        imageView.isUserInteractionEnabled = true
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        return imageView
+    }()
             
 }
 
@@ -151,17 +164,22 @@ extension CameraView {
         addSubview(flashButton)
         addSubview(pickerView)
         addSubview(translateView)
+        retakeButton.isHidden = true
+        scanButton.isHidden = true
+        croppedImageView.isHidden = true
         translateView.addSubview(translateLabel)
         translateView.addSubview(translateButton)
         translateView.addSubview(translateButtonImageView)
         shutterButton.addSubview(shutterImageView)
-        
+        addSubview(croppedImageView)
+        croppedImageView.addSubview(retakeButton)
+        croppedImageView.addSubview(scanButton)
         
         NSLayoutConstraint.activate([
             shutterButton.centerXAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor),
-            shutterButton.centerYAnchor.constraint(equalTo: safeAreaLayoutGuide.centerYAnchor,constant: 200),
-            shutterButton.heightAnchor.constraint(equalToConstant: 100),
-            shutterButton.widthAnchor.constraint(equalToConstant: 100),
+            shutterButton.centerYAnchor.constraint(equalTo: safeAreaLayoutGuide.centerYAnchor,constant: 150),
+            shutterButton.heightAnchor.constraint(equalToConstant: 90),
+            shutterButton.widthAnchor.constraint(equalToConstant: 90),
             
             shutterImageView.centerYAnchor.constraint(equalTo: shutterButton.centerYAnchor),
             shutterImageView.centerXAnchor.constraint(equalTo: shutterButton.centerXAnchor),
@@ -202,6 +220,21 @@ extension CameraView {
             translateButtonImageView.trailingAnchor.constraint(equalTo: translateView.trailingAnchor),
             translateButtonImageView.leadingAnchor.constraint(equalTo: translateButton.trailingAnchor),
             translateButtonImageView.heightAnchor.constraint(equalToConstant: 30),
+            
+            croppedImageView.topAnchor.constraint(equalTo: self.topAnchor),
+            croppedImageView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+            croppedImageView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            croppedImageView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            
+            retakeButton.leadingAnchor.constraint(equalTo: croppedImageView.leadingAnchor, constant: 20),
+            retakeButton.bottomAnchor.constraint(equalTo: croppedImageView.safeAreaLayoutGuide.bottomAnchor, constant: -100),
+            retakeButton.heightAnchor.constraint(equalToConstant: 50),
+            retakeButton.widthAnchor.constraint(equalToConstant: 120),
+                
+            scanButton.trailingAnchor.constraint(equalTo: croppedImageView.trailingAnchor, constant: -20),
+            scanButton.bottomAnchor.constraint(equalTo: croppedImageView.safeAreaLayoutGuide.bottomAnchor, constant: -100),
+            scanButton.heightAnchor.constraint(equalToConstant: 50),
+            scanButton.widthAnchor.constraint(equalToConstant: 120)
             
             
             

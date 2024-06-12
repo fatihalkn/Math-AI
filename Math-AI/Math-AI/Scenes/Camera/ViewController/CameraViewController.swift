@@ -10,7 +10,6 @@ import UIKit
 import AVFoundation
 import CropViewController
 
-
 class CameraViewController: UIViewController {
     
     //MARK: - Properties
@@ -30,7 +29,11 @@ class CameraViewController: UIViewController {
         checkCameraPermissions()
         addTargets() 
         setupDelegate()
+        firstBootSelection()
+        
+        
     }
+    
     
     override func loadView() {
         super.loadView()
@@ -85,11 +88,20 @@ class CameraViewController: UIViewController {
         }
     }
     
+    
     func addTargets() {
         cameraView.shutterButton.addTarget(self, action: #selector(didTapTakePhoto), for: .touchUpInside)
         cameraView.galleryButton.addTarget(self, action: #selector(didTapGalleryButton), for: .touchUpInside)
         cameraView.flashButton.addTarget(self, action: #selector(didTapFlashButton), for: .touchUpInside)
         cameraView.translateButton.addTarget(self, action: #selector(didTapTranslateButton), for: .touchUpInside)
+        cameraView.retakeButton.addTarget(self, action: #selector(didTapRetakeButton), for: .touchUpInside)
+    }
+    
+    func firstBootSelection() {
+        let defaultRow = cameraViewModel.scanOptions.firstIndex { $0.options == "Matematik" } ?? 0
+            cameraView.pickerView.selectRow(defaultRow, inComponent: 0, animated: false)
+            performActionsBasedOnSelected(selectedOption: cameraViewModel.scanOptions[defaultRow])
+        self.pickerView(cameraView.pickerView, didSelectRow: defaultRow, inComponent: 0)
     }
     
     @objc func didTapTranslateButton() {
@@ -107,6 +119,7 @@ class CameraViewController: UIViewController {
     
     @objc func didTapTakePhoto() {
         output.capturePhoto(with: AVCapturePhotoSettings(), delegate: self)
+
     }
     
     @objc func didTapGalleryButton() {
@@ -116,6 +129,12 @@ class CameraViewController: UIViewController {
         vc.allowsEditing = true
         present(vc, animated: true)
         
+    }
+    
+    @objc func didTapRetakeButton() {
+        let vc = TabbarController()
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: true)
     }
     
     @objc func didTapFlashButton() {
@@ -156,10 +175,15 @@ extension CameraViewController:  UIImagePickerControllerDelegate, UINavigationCo
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let image = info[.editedImage] as? UIImage {
-        selectedImage = image
+            selectedImage = image
             let scanningVC = ScanningViewController()
             scanningVC.image = image
-            navigationController?.pushViewController(scanningVC, animated: true)
+            scanningVC.vcTitle = cameraViewModel.scanOptionTitle
+            let navController = UINavigationController(rootViewController: scanningVC)
+            picker.dismiss(animated: true) {
+                navController.modalPresentationStyle = .fullScreen
+                self.present(navController, animated: true, completion: nil)
+            }
         }
         picker.dismiss(animated: true, completion: nil)
     }
@@ -176,32 +200,13 @@ extension CameraViewController: AVCapturePhotoCaptureDelegate {
         session?.stopRunning()
         DispatchQueue.main.async { [weak self] in
             guard let self else { return }
+            showCrop(image: image ?? .cameraGeneral)
             let imgeView = UIImageView(image: image)
             imgeView.contentMode = .scaleAspectFill
             imgeView.frame = cameraView.bounds
-            imgeView.addSubview(cameraView.retakeButton)
-            imgeView.addSubview(cameraView.scanButton)
-            showCrop(image: image ?? .cameraGeneral)
-            cameraView.scanButton.layer.cornerRadius = 25
-            cameraView.scanButton.layer.masksToBounds = true
-            
-            cameraView.retakeButton.layer.cornerRadius = 25
-            cameraView.retakeButton.layer.masksToBounds = true
-            
             cameraView.addSubview(imgeView)
+            tabBarController?.tabBar.isHidden = true
             
-            NSLayoutConstraint.activate([
-                        
-                cameraView.retakeButton.leadingAnchor.constraint(equalTo: cameraView.leadingAnchor, constant: 20),
-                cameraView.retakeButton.bottomAnchor.constraint(equalTo: cameraView.safeAreaLayoutGuide.bottomAnchor, constant: -100),
-                cameraView.retakeButton.heightAnchor.constraint(equalToConstant: 50),
-                cameraView.retakeButton.widthAnchor.constraint(equalToConstant: 120),
-                    
-                cameraView.scanButton.trailingAnchor.constraint(equalTo: cameraView.trailingAnchor, constant: -20),
-                cameraView.scanButton.bottomAnchor.constraint(equalTo: cameraView.safeAreaLayoutGuide.bottomAnchor, constant: -100),
-                cameraView.scanButton.heightAnchor.constraint(equalToConstant: 50),
-                cameraView.scanButton.widthAnchor.constraint(equalToConstant: 120)
-            ])
         }
         
     }
@@ -214,7 +219,12 @@ extension CameraViewController: AVCapturePhotoCaptureDelegate {
         vc.doneButtonTitle = "Devam"
         vc.cancelButtonTitle = "İptal"
         vc.delegate = self
-        present(vc, animated: true)
+        present(vc, animated: true) { [weak self] in
+            self?.cameraView.retakeButton.isHidden = false
+            self?.cameraView.scanButton.isHidden = false
+            self?.cameraView.croppedImageView.isHidden = false
+            
+        }
     }
 }
 
@@ -226,6 +236,8 @@ extension CameraViewController: CropViewControllerDelegate {
     
     func cropViewController(_ cropViewController: CropViewController, didCropToImage image: UIImage, withRect cropRect: CGRect, angle: Int) {
         cropViewController.dismiss(animated: true)
+        cameraView.croppedImageView.image = image
+        view.bringSubviewToFront(cameraView.croppedImageView)
         print("Crop Yapıldı")
     }
 }
@@ -270,8 +282,13 @@ extension CameraViewController: UIPickerViewDataSource, UIPickerViewDelegate {
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         let selectedRow = cameraViewModel.scanOptions[row]
         performActionsBasedOnSelected(selectedOption: selectedRow)
-        print("\(selectedRow)")
+        cameraViewModel.scanOptionTitle = selectedRow.options
+        print(selectedRow)
+
     }
+    
+    
+
     
     func performActionsBasedOnSelected(selectedOption: ScanOptions) {
         switch selectedOption.options {
@@ -301,6 +318,5 @@ extension CameraViewController: LanguagesViewControllerProtocol {
     func didSelectLanguage(language: String) {
         cameraView.translateButton.setTitle(language, for: .normal)
     }
-    
-    
+ 
 }

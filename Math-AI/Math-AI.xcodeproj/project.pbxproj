@@ -13,6 +13,7 @@
 		3D3B84F92C18679F002AC3C2 /* LanguagesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3B84F82C18679F002AC3C2 /* LanguagesViewModel.swift */; };
 		3D3B84FD2C1873AD002AC3C2 /* LanguagesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3B84FC2C1873AD002AC3C2 /* LanguagesCollectionViewCell.swift */; };
 		3D3B85002C18B397002AC3C2 /* CropViewController in Frameworks */ = {isa = PBXBuildFile; productRef = 3D3B84FF2C18B397002AC3C2 /* CropViewController */; };
+		3D3B85032C190905002AC3C2 /* TabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3B85022C190905002AC3C2 /* TabbarController.swift */; };
 		3D5143932C11BEE100C9A3F0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5143922C11BEE100C9A3F0 /* AppDelegate.swift */; };
 		3D5143952C11BEE100C9A3F0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5143942C11BEE100C9A3F0 /* SceneDelegate.swift */; };
 		3D51439C2C11BEE200C9A3F0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D51439B2C11BEE200C9A3F0 /* Assets.xcassets */; };
@@ -31,6 +32,7 @@
 		3D3B84F62C186777002AC3C2 /* LanguagesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguagesModel.swift; sourceTree = "<group>"; };
 		3D3B84F82C18679F002AC3C2 /* LanguagesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguagesViewModel.swift; sourceTree = "<group>"; };
 		3D3B84FC2C1873AD002AC3C2 /* LanguagesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguagesCollectionViewCell.swift; sourceTree = "<group>"; };
+		3D3B85022C190905002AC3C2 /* TabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarController.swift; sourceTree = "<group>"; };
 		3D51438F2C11BEE100C9A3F0 /* Math-AI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Math-AI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D5143922C11BEE100C9A3F0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3D5143942C11BEE100C9A3F0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -101,6 +103,14 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		3D3B85012C1908E6002AC3C2 /* TabbarController */ = {
+			isa = PBXGroup;
+			children = (
+				3D3B85022C190905002AC3C2 /* TabbarController.swift */,
+			);
+			path = TabbarController;
+			sourceTree = "<group>";
+		};
 		3D5143862C11BEE100C9A3F0 = {
 			isa = PBXGroup;
 			children = (
@@ -120,6 +130,7 @@
 		3D5143912C11BEE100C9A3F0 /* Math-AI */ = {
 			isa = PBXGroup;
 			children = (
+				3D3B85012C1908E6002AC3C2 /* TabbarController */,
 				3D5143A92C11C91700C9A3F0 /* Scenes */,
 				3D5143A82C11C91000C9A3F0 /* App */,
 			);
@@ -321,6 +332,7 @@
 				3D3B84F52C186677002AC3C2 /* LanguagesView.swift in Sources */,
 				3D3B84F92C18679F002AC3C2 /* LanguagesViewModel.swift in Sources */,
 				3D3B84EE2C17CB23002AC3C2 /* LanguagesViewController.swift in Sources */,
+				3D3B85032C190905002AC3C2 /* TabbarController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -24,6 +24,11 @@ class ScanningView: UIView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
+        scanButton.layer.cornerRadius = 15
+        scanButton.layer.masksToBounds = true
+        
+        cancelButton.layer.cornerRadius = 15
+        cancelButton.layer.masksToBounds = true
     }
     
     //MARK: - UI Elements
@@ -49,14 +54,44 @@ class ScanningView: UIView {
         view.backgroundColor = .black
         return view
     }()
+    
+    let contentView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .white
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+    let scanButton: UIButton = {
+        let scanButton = UIButton()
+        scanButton.setTitle("Tara", for: .normal)
+        scanButton.titleLabel?.font = .systemFont(ofSize: 18, weight: .black)
+        scanButton.backgroundColor = .main
+        scanButton.tintColor = .white
+        scanButton.translatesAutoresizingMaskIntoConstraints = false
+        return scanButton
+    }()
+    
+    let cancelButton: UIButton = {
+        let scanButton = UIButton()
+        scanButton.setTitle("İptal", for: .normal)
+        scanButton.titleLabel?.font = .systemFont(ofSize: 18, weight: .black)
+        scanButton.backgroundColor = .darkGray
+        scanButton.tintColor = .white
+        scanButton.translatesAutoresizingMaskIntoConstraints = false
+        return scanButton
+    }()
 }
 
 //MARK: - SetupUI
 extension ScanningView {
     func setupUI() {
-        backgroundColor = .gray
+        backgroundColor = .black
         addSubview(scanningContentView)
         addSubview(photoBackView)
+        addSubview(contentView)
+        contentView.addSubview(scanButton)
+        contentView.addSubview(cancelButton)
         photoBackView.addSubview(selectedGalleryImageView)
         
         NSLayoutConstraint.activate([
@@ -73,7 +108,23 @@ extension ScanningView {
             scanningContentView.topAnchor.constraint(equalTo: photoBackView.bottomAnchor),
             scanningContentView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor),
             scanningContentView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor),
-            scanningContentView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
+            scanningContentView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+            
+            contentView.topAnchor.constraint(equalTo: photoBackView.bottomAnchor,constant: 20),
+            contentView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor),
+            contentView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor),
+            contentView.heightAnchor.constraint(equalToConstant: 100),
+            
+            scanButton.centerXAnchor.constraint(equalTo: contentView.centerXAnchor,constant: 100),
+            scanButton.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
+            scanButton.heightAnchor.constraint(equalToConstant: 50),
+            scanButton.widthAnchor.constraint(equalToConstant: 150),
+            
+            cancelButton.centerXAnchor.constraint(equalTo: contentView.centerXAnchor,constant: -100),
+            cancelButton.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
+            cancelButton.heightAnchor.constraint(equalToConstant: 50),
+            cancelButton.widthAnchor.constraint(equalToConstant: 150)
+            
             
         ])
     }
