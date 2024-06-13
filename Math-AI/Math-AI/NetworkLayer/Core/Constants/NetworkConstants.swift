@@ -9,5 +9,5 @@ import Foundation
 
 enum NetworkConstants {
     static let chatBaseUrl = "https://api.openai.com/v1/chat/completions"
-    static var chatAPIKey = "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"
+    static var chatAPIKey = "//"
 }
