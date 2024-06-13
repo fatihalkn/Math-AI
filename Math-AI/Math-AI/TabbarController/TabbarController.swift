@@ -21,7 +21,7 @@ class TabbarController: UITabBarController {
     
     private func setupTabs() {
         let scan  = creatTabs(title: "Tarama & Çözüm", image: .scan, vc: CameraViewController())
-        let subject  = creatTabs(title: "Konular", image: .subject, vc: CameraViewController())
+        let subject  = creatTabs(title: "Konular", image: .subject, vc: TopicsViewController())
         let history   = creatTabs(title: "Geçmiş", image: .history, vc: CameraViewController())
         let settings   = creatTabs(title: "Ayarlar", image: .settings, vc: CameraViewController())
         self.setViewControllers([scan, subject, history, settings], animated: true)

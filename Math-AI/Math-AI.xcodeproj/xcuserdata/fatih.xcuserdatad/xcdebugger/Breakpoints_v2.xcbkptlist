@@ -14,8 +14,8 @@
             filePath = "Math-AI/Scenes/Camera/ViewController/CameraViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "97"
-            endingLineNumber = "97"
+            startingLineNumber = "108"
+            endingLineNumber = "108"
             landmarkName = "addTargets()"
             landmarkType = "7">
          </BreakpointContent>
@@ -30,102 +30,10 @@
             filePath = "Math-AI/Scenes/Camera/ViewController/CameraViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "134"
-            endingLineNumber = "134"
+            startingLineNumber = "145"
+            endingLineNumber = "145"
             landmarkName = "didTapRetakeButton()"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "074D4454-C00D-4B4D-9F91-9075B5207BBE - 337f2641e9c2ec6f"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Math_AI.CameraViewController.didTapRatakeButton() -&gt; ()"
-                  moduleName = "Math-AI"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/fatih/Desktop/GITHUB%20/Math-AI/Math-AI/Math-AI/Scenes/Camera/ViewController/CameraViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "135"
-                  endingLineNumber = "135"
-                  offsetFromSymbolStart = "56">
-               </Location>
-               <Location
-                  uuid = "074D4454-C00D-4B4D-9F91-9075B5207BBE - 7a2d983a966f2463"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Math_AI.CameraViewController.didTapRetakeButton() -&gt; ()"
-                  moduleName = "Math-AI"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/fatih/Desktop/GITHUB%20/Math-AI/Math-AI/Math-AI/Scenes/Camera/ViewController/CameraViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "135"
-                  endingLineNumber = "135"
-                  offsetFromSymbolStart = "36">
-               </Location>
-               <Location
-                  uuid = "074D4454-C00D-4B4D-9F91-9075B5207BBE - 7a2d983a966f2463"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Math_AI.CameraViewController.didTapRetakeButton() -&gt; ()"
-                  moduleName = "Math-AI"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/fatih/Desktop/GITHUB%20/Math-AI/Math-AI/Math-AI/Scenes/Camera/ViewController/CameraViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "135"
-                  endingLineNumber = "135"
-                  offsetFromSymbolStart = "48">
-               </Location>
-               <Location
-                  uuid = "074D4454-C00D-4B4D-9F91-9075B5207BBE - 7a2d983a966f2463"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Math_AI.CameraViewController.didTapRetakeButton() -&gt; ()"
-                  moduleName = "Math-AI"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/fatih/Desktop/GITHUB%20/Math-AI/Math-AI/Math-AI/Scenes/Camera/ViewController/CameraViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "135"
-                  endingLineNumber = "135"
-                  offsetFromSymbolStart = "68">
-               </Location>
-               <Location
-                  uuid = "074D4454-C00D-4B4D-9F91-9075B5207BBE - 7a2d983a966f2402"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Math_AI.CameraViewController.didTapRetakeButton() -&gt; ()"
-                  moduleName = "Math-AI"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/fatih/Desktop/GITHUB%20/Math-AI/Math-AI/Math-AI/Scenes/Camera/ViewController/CameraViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "136"
-                  endingLineNumber = "136"
-                  offsetFromSymbolStart = "44">
-               </Location>
-               <Location
-                  uuid = "074D4454-C00D-4B4D-9F91-9075B5207BBE - 7a2d983a966f2463"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Math_AI.CameraViewController.didTapRetakeButton() -&gt; ()"
-                  moduleName = "Math-AI"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/fatih/Desktop/GITHUB%20/Math-AI/Math-AI/Math-AI/Scenes/Camera/ViewController/CameraViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "135"
-                  endingLineNumber = "135"
-                  offsetFromSymbolStart = "32">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

@@ -77,6 +77,7 @@ class ScanningView: UIView {
         scanButton.setTitle("İptal", for: .normal)
         scanButton.titleLabel?.font = .systemFont(ofSize: 18, weight: .black)
         scanButton.backgroundColor = .darkGray
+        scanButton.backgroundColor = .darkGray
         scanButton.tintColor = .white
         scanButton.translatesAutoresizingMaskIntoConstraints = false
         return scanButton
