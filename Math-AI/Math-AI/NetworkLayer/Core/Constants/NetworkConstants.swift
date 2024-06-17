@@ -11,3 +11,4 @@ enum NetworkConstants {
     static let chatBaseUrl = "https://api.openai.com/v1/chat/completions"
     static var chatAPIKey = ""
 }
+ 

@@ -34,6 +34,12 @@
 		3D5143B92C1726C800C9A3F0 /* ScanningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5143B82C1726C800C9A3F0 /* ScanningViewController.swift */; };
 		3D5143BB2C173FCD00C9A3F0 /* ScanOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5143BA2C173FCD00C9A3F0 /* ScanOptions.swift */; };
 		3D5143BD2C173FE600C9A3F0 /* CameraViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5143BC2C173FE600C9A3F0 /* CameraViewModel.swift */; };
+		3DF7D4E32C1C493500C950AD /* TableViewHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF7D4E22C1C493500C950AD /* TableViewHeaderView.swift */; };
+		3DF7D4E72C20593600C950AD /* TableHeaderViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF7D4E62C20593600C950AD /* TableHeaderViewCell.swift */; };
+		3DF7D4F12C2073A500C950AD /* CoreDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF7D4F02C2073A500C950AD /* CoreDataModel.swift */; };
+		3DF7D4F42C207DC700C950AD /* FavoriteTopicsDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3DF7D4F22C207DC700C950AD /* FavoriteTopicsDataModel.xcdatamodeld */; };
+		3DF7D4F72C207E0C00C950AD /* SubjectTopics+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF7D4F52C207E0C00C950AD /* SubjectTopics+CoreDataClass.swift */; };
+		3DF7D4F82C207E0C00C950AD /* SubjectTopics+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF7D4F62C207E0C00C950AD /* SubjectTopics+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +70,12 @@
 		3D5143B82C1726C800C9A3F0 /* ScanningViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanningViewController.swift; sourceTree = "<group>"; };
 		3D5143BA2C173FCD00C9A3F0 /* ScanOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanOptions.swift; sourceTree = "<group>"; };
 		3D5143BC2C173FE600C9A3F0 /* CameraViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewModel.swift; sourceTree = "<group>"; };
+		3DF7D4E22C1C493500C950AD /* TableViewHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewHeaderView.swift; sourceTree = "<group>"; };
+		3DF7D4E62C20593600C950AD /* TableHeaderViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableHeaderViewCell.swift; sourceTree = "<group>"; };
+		3DF7D4F02C2073A500C950AD /* CoreDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataModel.swift; sourceTree = "<group>"; };
+		3DF7D4F32C207DC700C950AD /* FavoriteTopicsDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FavoriteTopicsDataModel.xcdatamodel; sourceTree = "<group>"; };
+		3DF7D4F52C207E0C00C950AD /* SubjectTopics+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SubjectTopics+CoreDataClass.swift"; sourceTree = "<group>"; };
+		3DF7D4F62C207E0C00C950AD /* SubjectTopics+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SubjectTopics+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -198,6 +210,8 @@
 			children = (
 				3D3B851D2C1B6676002AC3C2 /* TopicsView.swift */,
 				3D3B85292C1B6D6F002AC3C2 /* TopicsTableViewCell.swift */,
+				3DF7D4E22C1C493500C950AD /* TableViewHeaderView.swift */,
+				3DF7D4E62C20593600C950AD /* TableHeaderViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -245,6 +259,7 @@
 		3D5143912C11BEE100C9A3F0 /* Math-AI */ = {
 			isa = PBXGroup;
 			children = (
+				3DF7D4EF2C20738500C950AD /* CoreData */,
 				3D3B85042C1B45F1002AC3C2 /* NetworkLayer */,
 				3D3B85012C1908E6002AC3C2 /* TabbarController */,
 				3D5143A92C11C91700C9A3F0 /* Scenes */,
@@ -257,6 +272,7 @@
 			isa = PBXGroup;
 			children = (
 				3D5143922C11BEE100C9A3F0 /* AppDelegate.swift */,
+				3DF7D4F22C207DC700C950AD /* FavoriteTopicsDataModel.xcdatamodeld */,
 				3D5143942C11BEE100C9A3F0 /* SceneDelegate.swift */,
 				3D51439B2C11BEE200C9A3F0 /* Assets.xcassets */,
 				3D51439D2C11BEE200C9A3F0 /* LaunchScreen.storyboard */,
@@ -360,6 +376,16 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		3DF7D4EF2C20738500C950AD /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				3DF7D4F52C207E0C00C950AD /* SubjectTopics+CoreDataClass.swift */,
+				3DF7D4F62C207E0C00C950AD /* SubjectTopics+CoreDataProperties.swift */,
+				3DF7D4F02C2073A500C950AD /* CoreDataModel.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -439,6 +465,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3D5143B72C17265D00C9A3F0 /* ScanningView.swift in Sources */,
+				3DF7D4E72C20593600C950AD /* TableHeaderViewCell.swift in Sources */,
 				3D5143B92C1726C800C9A3F0 /* ScanningViewController.swift in Sources */,
 				3D3B84F72C186777002AC3C2 /* LanguagesModel.swift in Sources */,
 				3D5143BB2C173FCD00C9A3F0 /* ScanOptions.swift in Sources */,
@@ -451,13 +478,18 @@
 				3D3B850F2C1B4835002AC3C2 /* ChatRequestBody.swift in Sources */,
 				3D5143BD2C173FE600C9A3F0 /* CameraViewModel.swift in Sources */,
 				3D3B85242C1B6908002AC3C2 /* TopicsViewModel.swift in Sources */,
+				3DF7D4F72C207E0C00C950AD /* SubjectTopics+CoreDataClass.swift in Sources */,
 				3D5143A72C11C08700C9A3F0 /* CameraViewController.swift in Sources */,
 				3D5143B02C11C96E00C9A3F0 /* CameraView.swift in Sources */,
+				3DF7D4F12C2073A500C950AD /* CoreDataModel.swift in Sources */,
 				3D3B84FD2C1873AD002AC3C2 /* LanguagesCollectionViewCell.swift in Sources */,
 				3D3B84F52C186677002AC3C2 /* LanguagesView.swift in Sources */,
 				3D3B84F92C18679F002AC3C2 /* LanguagesViewModel.swift in Sources */,
+				3DF7D4F82C207E0C00C950AD /* SubjectTopics+CoreDataProperties.swift in Sources */,
 				3D3B852A2C1B6D6F002AC3C2 /* TopicsTableViewCell.swift in Sources */,
+				3DF7D4E32C1C493500C950AD /* TableViewHeaderView.swift in Sources */,
 				3D3B84EE2C17CB23002AC3C2 /* LanguagesViewController.swift in Sources */,
+				3DF7D4F42C207DC700C950AD /* FavoriteTopicsDataModel.xcdatamodeld in Sources */,
 				3D3B85152C1B48EB002AC3C2 /* NetworkConstants.swift in Sources */,
 				3D3B85202C1B668F002AC3C2 /* TopicsViewController.swift in Sources */,
 				3D3B85032C190905002AC3C2 /* TabbarController.swift in Sources */,
@@ -707,6 +739,19 @@
 			productName = Alamofire;
 		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		3DF7D4F22C207DC700C950AD /* FavoriteTopicsDataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				3DF7D4F32C207DC700C950AD /* FavoriteTopicsDataModel.xcdatamodel */,
+			);
+			currentVersion = 3DF7D4F32C207DC700C950AD /* FavoriteTopicsDataModel.xcdatamodel */;
+			path = FavoriteTopicsDataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 3D5143872C11BEE100C9A3F0 /* Project object */;
 }
