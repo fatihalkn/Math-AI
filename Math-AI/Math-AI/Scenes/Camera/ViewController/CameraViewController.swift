@@ -30,19 +30,7 @@ class CameraViewController: UIViewController {
         addTargets() 
         setupDelegate()
         firstBootSelection()
-//        let model = "gpt-3.5-turbo"
-//        let message = [
-//            Message(role: .assistant, content: "Merhaba, nasılsın")
-//        ]
-//        
-//        NetworkService.shared.sendChatRequest(model: model, messages: message) { (response: Result< ChatResponseModel, Error>) in
-//            switch response {
-//            case .success(let success):
-//                print("İSTEK BAŞARILI \(success)")
-//            case .failure(let failure):
-//                print("İSTEK BAŞARISIZ \(failure)")
-//            }
-//        }
+
     }
     
     

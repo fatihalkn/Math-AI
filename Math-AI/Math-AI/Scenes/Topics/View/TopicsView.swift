@@ -36,7 +36,7 @@ class TopicsView: UIView {
     }()
 }
 
-//MARK: - UI Elements
+//MARK: - SetupUI
 extension TopicsView {
     func setupUI() {
         backgroundColor = .white
