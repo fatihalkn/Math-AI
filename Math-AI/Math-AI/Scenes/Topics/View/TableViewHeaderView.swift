@@ -22,6 +22,7 @@ class TableViewHeaderView: UIView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
+       
     }
     
     //MARK: - UI Elements
@@ -48,6 +49,30 @@ class TableViewHeaderView: UIView {
         label.textAlignment = .center
         return label
     }()
+    
+    lazy var emptyLabal: UILabel = {
+            let label = UILabel()
+            label.text = "Favori Listeniz Boş"
+        label.textColor = .gray
+            label.textAlignment = .center
+            label.font = .systemFont(ofSize: 20)
+            label.translatesAutoresizingMaskIntoConstraints = false
+            return label
+        }()
+    
+    public func showEmptyStateLabel() {
+        favoriteCollectionView.addSubview(emptyLabal)
+        NSLayoutConstraint.activate([
+            emptyLabal.centerXAnchor.constraint(equalTo: favoriteCollectionView.centerXAnchor),
+            emptyLabal.centerYAnchor.constraint(equalTo: favoriteCollectionView.centerYAnchor)
+        ])
+    }
+    
+    public func hideEmptyStateLabel() {
+        emptyLabal.removeFromSuperview()
+    }
+    
+    
 }
 
 extension TableViewHeaderView {
@@ -57,6 +82,7 @@ extension TableViewHeaderView {
         addSubview(favoriteCollectionView)
         addSubview(headerViewTitleLabel)
         
+        
         NSLayoutConstraint.activate([
             headerViewTitleLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor,constant: 10),
             headerViewTitleLabel.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor),
@@ -65,7 +91,9 @@ extension TableViewHeaderView {
             favoriteCollectionView.topAnchor.constraint(equalTo: headerViewTitleLabel.bottomAnchor, constant: 10),
             favoriteCollectionView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor),
             favoriteCollectionView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor),
-            favoriteCollectionView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor)
+            favoriteCollectionView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor),
+            
+            
         ])
     }
 }

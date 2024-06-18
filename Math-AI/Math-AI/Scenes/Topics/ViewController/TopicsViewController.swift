@@ -29,8 +29,10 @@ class TopicsViewController: UIViewController {
         super.viewDidLoad()
         setupRegister()
         setupDelegate()
-        
         self.favoriteSubjectTypes = CoreDataModel.shared.fetchGetCoreData()
+        updateEmptyStateLabel()
+        setupNavigation()
+        configureNavigationBar()
                
     }
     
@@ -43,6 +45,7 @@ class TopicsViewController: UIViewController {
             self.favoriteSubjectTypes = CoreDataModel.shared.fetchGetCoreData()
             self.topicsHeaderView.favoriteCollectionView.reloadData()
             self.topicsView.topicsTableView.reloadData()
+            updateEmptyStateLabel()
         }
         
     func setupRegister() {
@@ -56,6 +59,32 @@ class TopicsViewController: UIViewController {
         
         topicsHeaderView.favoriteCollectionView.dataSource = self
         topicsHeaderView.favoriteCollectionView.delegate = self
+    }
+    
+    func updateEmptyStateLabel() {
+        if favoriteSubjectTypes.isEmpty {
+            topicsHeaderView.showEmptyStateLabel()
+        } else {
+            topicsHeaderView.hideEmptyStateLabel()
+        }
+    }
+    
+    func setupNavigation() {
+        let topicsTitle = UIBarButtonItem(title: "Konular")
+        navigationItem.leftBarButtonItem = topicsTitle
+    }
+    
+    func configureNavigationBar() {
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        appearance.backgroundColor = .white
+        appearance.titleTextAttributes = [.foregroundColor: UIColor.black]
+        appearance.largeTitleTextAttributes = [.foregroundColor: UIColor.black]
+        
+        navigationController?.navigationBar.standardAppearance = appearance
+        navigationController?.navigationBar.scrollEdgeAppearance = appearance
+        navigationController?.navigationBar.compactAppearance = appearance
+        navigationController?.navigationBar.tintColor = .black
     }
 }
 
@@ -100,7 +129,7 @@ extension TopicsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: TopicsTableViewCell.identifier, for: indexPath) as! TopicsTableViewCell
-        var topicsItem = topicsViewModel.topics[indexPath.section].topics[indexPath.row]
+        let topicsItem = topicsViewModel.topics[indexPath.section].topics[indexPath.row]
         cell.configure(with: topicsItem)
         
         if favoriteSubjectTypes.contains(topicsItem.type) {
@@ -121,8 +150,61 @@ extension TopicsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        let itemType = topicsViewModel.topics[indexPath.section].topics[indexPath.row]
-        itemType.handler()
+        let itemType = topicsViewModel.topics[indexPath.section].topics[indexPath.row].type
+        switch itemType {
+        case .ask:
+            let vc = AskSubjectViewController()
+            navigationController?.pushViewController(vc, animated: true)
+        case .explain:
+            print("soru")
+        case .knowledgeCompetition:
+            print("soru")
+        case .attempt:
+            print("soru")
+        case .poem:
+            print("soru")
+        case .blog:
+            print("soru")
+        case .paragraph:
+            print("soru")
+        case .lyrics:
+            print("soru")
+        case .stroy:
+            print("soru")
+        case .writeCode:
+            print("soru")
+        case .checkCode:
+            print("soru")
+        case .optimizeCode:
+            print("soru")
+        case .explaneCode:
+            print("soru")
+        case .writeEmail:
+            print("soru")
+        case .emailSubject:
+            print("soru")
+        case .ımproveEmail:
+            print("soru")
+        case .simplify:
+            print("soru")
+        case .improve:
+            print("soru")
+        case .keepWriting:
+            print("soru")
+        case .shorten:
+            print("soru")
+        case .grammar:
+            print("soru")
+        case .translate:
+            print("soru")
+        case .summarizeText:
+            print("soru")
+        case .summarizeBook:
+            print("soru")
+        case .extractKeywords:
+            print("soru")
+        }
+        
     }
     
     
@@ -149,11 +231,9 @@ extension TopicsViewController: UICollectionViewDelegate, UICollectionViewDataSo
         return .init(width: cellWidth, height: cellHeight)
     }
     
-//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        let titleToDelete = favoriteSubjectTypes[indexPath.item]
-//        CoreDataModel.shared.deleteTopics(withTitle: titleToDelete)
-//        updateFavoriteCollectionView()
-//    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print(indexPath)
+    }
 
 }
 
@@ -165,6 +245,7 @@ extension TopicsViewController: TopicsTableViewCellProtocol {
             CoreDataModel.shared.deleteTopics(withTitle: topicType)
         } else {
             CoreDataModel.shared.saveTopics(topicType: topicType)
+            
         }
         updateFavoriteCollectionView()
        

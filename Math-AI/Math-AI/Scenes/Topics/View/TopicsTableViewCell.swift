@@ -134,7 +134,7 @@ class TopicsTableViewCell: UITableViewCell {
             subtitleLabel.trailingAnchor.constraint(equalTo:contentView.trailingAnchor),
             subtitleLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
             
-            favoriteButton.centerXAnchor.constraint(equalTo: contentView.centerXAnchor,constant: 160),
+            favoriteButton.centerXAnchor.constraint(equalTo: contentView.centerXAnchor,constant: 155),
             favoriteButton.centerYAnchor.constraint(equalTo: contentView.centerYAnchor,constant: -10),
             favoriteButton.heightAnchor.constraint(equalToConstant: 30),
             favoriteButton.widthAnchor.constraint(equalToConstant: 30)
