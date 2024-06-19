@@ -153,7 +153,9 @@ extension TopicsViewController: UITableViewDelegate, UITableViewDataSource {
         let itemType = topicsViewModel.topics[indexPath.section].topics[indexPath.row].type
         switch itemType {
         case .ask:
+            let itemTitle = topicsViewModel.topics[indexPath.section].topics[indexPath.row].title
             let vc = AskSubjectViewController()
+            vc.title = itemTitle
             navigationController?.pushViewController(vc, animated: true)
         case .explain:
             print("soru")

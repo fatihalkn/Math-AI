@@ -34,12 +34,13 @@ class AskSubjectViewModel {
     
     
     
-    func sendAskPromtText(ask: String, languages: String,completion: @escaping (String?) -> Void) {
+    func sendAskPromtText(ask: String, languages: String, systemContent: String,completion: @escaping (String?) -> Void) {
         let model = "gpt-3.5-turbo"
         let message = [
-            Message(role: .assistant, content: "SORU: \(ask) DİL: \(languages) ")
+            Message(role: .system, content: systemContent),
+            Message(role: .user, content: "SORU: \(ask) DİL: \(languages)")
         ]
-        
+    
         NetworkService.shared.sendChatRequest(model: model, messages: message) { (response: Result< ChatResponseModel, Error>) in
             switch response {
             case .success(let success):

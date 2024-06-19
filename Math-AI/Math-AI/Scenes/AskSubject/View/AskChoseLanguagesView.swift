@@ -53,11 +53,12 @@ extension AskChoseLanguagesView {
      
         
         NSLayoutConstraint.activate([
+    
             
-            askSubjectlanguagesCollectionView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor,constant: 50),
-            askSubjectlanguagesCollectionView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor,constant: -50),
-            askSubjectlanguagesCollectionView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor,constant: -50),
-            askSubjectlanguagesCollectionView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor,constant: 50)
+            askSubjectlanguagesCollectionView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor),
+            askSubjectlanguagesCollectionView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor),
+            askSubjectlanguagesCollectionView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor),
+            askSubjectlanguagesCollectionView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor)
             
         ])
     }

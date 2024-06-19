@@ -42,6 +42,9 @@ class AskChatView: UIView {
     let textField: UITextField = {
         let textField = UITextField()
         textField.backgroundColor = .gr
+        let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: textField.frame.height))
+        textField.leftView = paddingView
+        textField.placeholder = "Mesajınızı buraya yazın"
         textField.leftViewMode = .always
         textField.autocapitalizationType = .none
         textField.autocorrectionType = .no
@@ -72,7 +75,7 @@ extension AskChatView {
             textField.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor),
             textField.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor),
             textField.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor),
-            textField.heightAnchor.constraint(equalToConstant: 120),
+            textField.heightAnchor.constraint(equalToConstant: 60),
             
             sendImageView.centerYAnchor.constraint(equalTo: textField.centerYAnchor),
             sendImageView.trailingAnchor.constraint(equalTo: textField.trailingAnchor,constant: -20),

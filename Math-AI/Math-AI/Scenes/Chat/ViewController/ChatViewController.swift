@@ -8,11 +8,15 @@
 import Foundation
 import UIKit
 
-class AskChatViewController: UIViewController {
+class ChatViewController: UIViewController {
     
     //MARK: - Properties
     var askChatView = AskChatView()
-    var askChatViewModel = AskChatViewModel()
+    var askChatViewModel = ChatViewModel()
+    
+    var systemContent: String?
+    var language: String?
+    
     
     //MARK: - Life Cycle Methods
     override func viewDidLoad() {
@@ -43,19 +47,19 @@ class AskChatViewController: UIViewController {
     }
     
     
-    
-    }
+}
 
 
 //MARK: - Configure TableView
-extension AskChatViewController: UITableViewDelegate, UITableViewDataSource {
+extension ChatViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return askChatViewModel.answers.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: AskChatTableViewCell.identifier, for: indexPath) as! AskChatTableViewCell
-        cell.chatTextLabel.text = askChatViewModel.answers[indexPath.row]
+        let message = askChatViewModel.answers[indexPath.row]
+        cell.configureForMassage(message: message, isUser: indexPath.row % 2 == 0)
         return cell
     }
     
@@ -65,6 +69,24 @@ extension AskChatViewController: UITableViewDelegate, UITableViewDataSource {
 }
 
 //MARK: - UITextFieldDelegate
-extension AskChatViewController: UITextFieldDelegate {
-    
+extension ChatViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        guard let text = textField.text, !text.isEmpty else { return false }
+        
+        textField.text = ""
+        askChatViewModel.sendAskPromtText(ask: text, languages: language ?? "BOŞ", systemContent: systemContent ?? "Boş") { response in
+            if let response = response {
+                DispatchQueue.main.async {
+                    self.askChatViewModel.addChatMessage(text)
+                    self.askChatViewModel.addChatMessage(response)
+                    self.askChatView.askChatTableView.reloadData()
+                }
+                
+            } else {
+                
+            }
+        }
+        return true
+    }
 }
+
