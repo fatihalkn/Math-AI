@@ -47,10 +47,13 @@
 		3DF7D50D2C21FE6800C950AD /* AskChoseLanguagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF7D50C2C21FE6800C950AD /* AskChoseLanguagesViewController.swift */; };
 		3DF7D50F2C21FEA900C950AD /* AskChoseLanguagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF7D50E2C21FEA900C950AD /* AskChoseLanguagesView.swift */; };
 		3DF7D5112C21FFA400C950AD /* AskChoseLanguagesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF7D5102C21FFA400C950AD /* AskChoseLanguagesCell.swift */; };
-		3DF7D5182C22114900C950AD /* AskChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF7D5172C22114900C950AD /* AskChatViewController.swift */; };
-		3DF7D51A2C22118B00C950AD /* AskChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF7D5192C22118B00C950AD /* AskChatView.swift */; };
-		3DF7D51C2C22251400C950AD /* AskChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF7D51B2C22251400C950AD /* AskChatTableViewCell.swift */; };
-		3DF7D51E2C2231DF00C950AD /* AskChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF7D51D2C2231DF00C950AD /* AskChatViewModel.swift */; };
+		3DF7D5182C22114900C950AD /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF7D5172C22114900C950AD /* ChatViewController.swift */; };
+		3DF7D51A2C22118B00C950AD /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF7D5192C22118B00C950AD /* ChatView.swift */; };
+		3DF7D51C2C22251400C950AD /* ChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF7D51B2C22251400C950AD /* ChatTableViewCell.swift */; };
+		3DF7D51E2C2231DF00C950AD /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF7D51D2C2231DF00C950AD /* ChatViewModel.swift */; };
+		3DF7D5212C235AB300C950AD /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 3DF7D5202C235AB300C950AD /* IQKeyboardManagerSwift */; };
+		3DF7D5242C235ABF00C950AD /* ProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 3DF7D5232C235ABF00C950AD /* ProgressHUD */; };
+		3DF7D5272C235F3B00C950AD /* Extantion+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF7D5262C235F3B00C950AD /* Extantion+UIView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -94,10 +97,11 @@
 		3DF7D50C2C21FE6800C950AD /* AskChoseLanguagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AskChoseLanguagesViewController.swift; sourceTree = "<group>"; };
 		3DF7D50E2C21FEA900C950AD /* AskChoseLanguagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AskChoseLanguagesView.swift; sourceTree = "<group>"; };
 		3DF7D5102C21FFA400C950AD /* AskChoseLanguagesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AskChoseLanguagesCell.swift; sourceTree = "<group>"; };
-		3DF7D5172C22114900C950AD /* AskChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AskChatViewController.swift; sourceTree = "<group>"; };
-		3DF7D5192C22118B00C950AD /* AskChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AskChatView.swift; sourceTree = "<group>"; };
-		3DF7D51B2C22251400C950AD /* AskChatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AskChatTableViewCell.swift; sourceTree = "<group>"; };
-		3DF7D51D2C2231DF00C950AD /* AskChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AskChatViewModel.swift; sourceTree = "<group>"; };
+		3DF7D5172C22114900C950AD /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		3DF7D5192C22118B00C950AD /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
+		3DF7D51B2C22251400C950AD /* ChatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTableViewCell.swift; sourceTree = "<group>"; };
+		3DF7D51D2C2231DF00C950AD /* ChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
+		3DF7D5262C235F3B00C950AD /* Extantion+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extantion+UIView.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,7 +110,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				3D3B85002C18B397002AC3C2 /* CropViewController in Frameworks */,
+				3DF7D5242C235ABF00C950AD /* ProgressHUD in Frameworks */,
 				3D3B850C2C1B4692002AC3C2 /* Alamofire in Frameworks */,
+				3DF7D5212C235AB300C950AD /* IQKeyboardManagerSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,6 +287,7 @@
 		3D5143912C11BEE100C9A3F0 /* Math-AI */ = {
 			isa = PBXGroup;
 			children = (
+				3DF7D5252C235F1200C950AD /* Extantion+UIView */,
 				3DF7D4EF2C20738500C950AD /* CoreData */,
 				3D3B85042C1B45F1002AC3C2 /* NetworkLayer */,
 				3D3B85012C1908E6002AC3C2 /* TabbarController */,
@@ -306,7 +313,7 @@
 		3D5143A92C11C91700C9A3F0 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				3DF7D5122C2210F500C950AD /* AskChat */,
+				3DF7D5122C2210F500C950AD /* Chat */,
 				3DF7D4FB2C21ADCD00C950AD /* AskSubject */,
 				3DF7D4FC2C21ADE100C950AD /* ExplainSubject */,
 				3D3B85182C1B6604002AC3C2 /* Topics */,
@@ -464,47 +471,55 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		3DF7D5122C2210F500C950AD /* AskChat */ = {
+		3DF7D5122C2210F500C950AD /* Chat */ = {
 			isa = PBXGroup;
 			children = (
-				3DF7D5162C22113100C950AD /* AskChatModel */,
-				3DF7D5152C22112500C950AD /* AskChatViewModel */,
-				3DF7D5142C22111400C950AD /* AskChatViewController */,
-				3DF7D5132C22110100C950AD /* AskChatView */,
+				3DF7D5162C22113100C950AD /* ChatModel */,
+				3DF7D5152C22112500C950AD /* ChatViewModel */,
+				3DF7D5142C22111400C950AD /* ViewController */,
+				3DF7D5132C22110100C950AD /* ChatView */,
 			);
-			path = AskChat;
+			path = Chat;
 			sourceTree = "<group>";
 		};
-		3DF7D5132C22110100C950AD /* AskChatView */ = {
+		3DF7D5132C22110100C950AD /* ChatView */ = {
 			isa = PBXGroup;
 			children = (
-				3DF7D5192C22118B00C950AD /* AskChatView.swift */,
-				3DF7D51B2C22251400C950AD /* AskChatTableViewCell.swift */,
+				3DF7D5192C22118B00C950AD /* ChatView.swift */,
+				3DF7D51B2C22251400C950AD /* ChatTableViewCell.swift */,
 			);
-			path = AskChatView;
+			path = ChatView;
 			sourceTree = "<group>";
 		};
-		3DF7D5142C22111400C950AD /* AskChatViewController */ = {
+		3DF7D5142C22111400C950AD /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				3DF7D5172C22114900C950AD /* AskChatViewController.swift */,
+				3DF7D5172C22114900C950AD /* ChatViewController.swift */,
 			);
-			path = AskChatViewController;
+			path = ViewController;
 			sourceTree = "<group>";
 		};
-		3DF7D5152C22112500C950AD /* AskChatViewModel */ = {
+		3DF7D5152C22112500C950AD /* ChatViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				3DF7D51D2C2231DF00C950AD /* AskChatViewModel.swift */,
+				3DF7D51D2C2231DF00C950AD /* ChatViewModel.swift */,
 			);
-			path = AskChatViewModel;
+			path = ChatViewModel;
 			sourceTree = "<group>";
 		};
-		3DF7D5162C22113100C950AD /* AskChatModel */ = {
+		3DF7D5162C22113100C950AD /* ChatModel */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = AskChatModel;
+			path = ChatModel;
+			sourceTree = "<group>";
+		};
+		3DF7D5252C235F1200C950AD /* Extantion+UIView */ = {
+			isa = PBXGroup;
+			children = (
+				3DF7D5262C235F3B00C950AD /* Extantion+UIView.swift */,
+			);
+			path = "Extantion+UIView";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -526,6 +541,8 @@
 			packageProductDependencies = (
 				3D3B84FF2C18B397002AC3C2 /* CropViewController */,
 				3D3B850B2C1B4692002AC3C2 /* Alamofire */,
+				3DF7D5202C235AB300C950AD /* IQKeyboardManagerSwift */,
+				3DF7D5232C235ABF00C950AD /* ProgressHUD */,
 			);
 			productName = "Math-AI";
 			productReference = 3D51438F2C11BEE100C9A3F0 /* Math-AI.app */;
@@ -558,6 +575,8 @@
 			packageReferences = (
 				3D3B84FE2C18B397002AC3C2 /* XCRemoteSwiftPackageReference "TOCropViewController" */,
 				3D3B850A2C1B4692002AC3C2 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				3DF7D51F2C235AB200C950AD /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
+				3DF7D5222C235ABF00C950AD /* XCRemoteSwiftPackageReference "ProgressHUD" */,
 			);
 			productRefGroup = 3D5143902C11BEE100C9A3F0 /* Products */;
 			projectDirPath = "";
@@ -587,7 +606,7 @@
 			files = (
 				3D5143B72C17265D00C9A3F0 /* ScanningView.swift in Sources */,
 				3DF7D4E72C20593600C950AD /* TableHeaderViewCell.swift in Sources */,
-				3DF7D5182C22114900C950AD /* AskChatViewController.swift in Sources */,
+				3DF7D5182C22114900C950AD /* ChatViewController.swift in Sources */,
 				3DF7D50B2C21FCD400C950AD /* AskSubjectModel.swift in Sources */,
 				3DF7D50F2C21FEA900C950AD /* AskChoseLanguagesView.swift in Sources */,
 				3D5143B92C1726C800C9A3F0 /* ScanningViewController.swift in Sources */,
@@ -597,7 +616,7 @@
 				3D3B85262C1B691D002AC3C2 /* TopicsModel.swift in Sources */,
 				3D3B851E2C1B6676002AC3C2 /* TopicsView.swift in Sources */,
 				3D5143932C11BEE100C9A3F0 /* AppDelegate.swift in Sources */,
-				3DF7D51E2C2231DF00C950AD /* AskChatViewModel.swift in Sources */,
+				3DF7D51E2C2231DF00C950AD /* ChatViewModel.swift in Sources */,
 				3D5143952C11BEE100C9A3F0 /* SceneDelegate.swift in Sources */,
 				3D3B85092C1B466B002AC3C2 /* ChatResponseModel.swift in Sources */,
 				3D3B850F2C1B4835002AC3C2 /* ChatRequestBody.swift in Sources */,
@@ -613,7 +632,7 @@
 				3D3B84F52C186677002AC3C2 /* LanguagesView.swift in Sources */,
 				3DF7D5092C21FC8100C950AD /* AskSubjectViewModel.swift in Sources */,
 				3D3B84F92C18679F002AC3C2 /* LanguagesViewModel.swift in Sources */,
-				3DF7D51C2C22251400C950AD /* AskChatTableViewCell.swift in Sources */,
+				3DF7D51C2C22251400C950AD /* ChatTableViewCell.swift in Sources */,
 				3DF7D5022C21AEBD00C950AD /* AskSubjectViewController.swift in Sources */,
 				3DF7D50D2C21FE6800C950AD /* AskChoseLanguagesViewController.swift in Sources */,
 				3DF7D4F82C207E0C00C950AD /* SubjectTopics+CoreDataProperties.swift in Sources */,
@@ -622,8 +641,9 @@
 				3D3B84EE2C17CB23002AC3C2 /* LanguagesViewController.swift in Sources */,
 				3DF7D4F42C207DC700C950AD /* FavoriteTopicsDataModel.xcdatamodeld in Sources */,
 				3D3B85152C1B48EB002AC3C2 /* NetworkConstants.swift in Sources */,
+				3DF7D5272C235F3B00C950AD /* Extantion+UIView.swift in Sources */,
 				3D3B85202C1B668F002AC3C2 /* TopicsViewController.swift in Sources */,
-				3DF7D51A2C22118B00C950AD /* AskChatView.swift in Sources */,
+				3DF7D51A2C22118B00C950AD /* ChatView.swift in Sources */,
 				3D3B85032C190905002AC3C2 /* TabbarController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -857,6 +877,22 @@
 				minimumVersion = 5.9.1;
 			};
 		};
+		3DF7D51F2C235AB200C950AD /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.3;
+			};
+		};
+		3DF7D5222C235ABF00C950AD /* XCRemoteSwiftPackageReference "ProgressHUD" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/relatedcode/ProgressHUD.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 14.1.3;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -869,6 +905,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 3D3B850A2C1B4692002AC3C2 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		3DF7D5202C235AB300C950AD /* IQKeyboardManagerSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3DF7D51F2C235AB200C950AD /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
+			productName = IQKeyboardManagerSwift;
+		};
+		3DF7D5232C235ABF00C950AD /* ProgressHUD */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3DF7D5222C235ABF00C950AD /* XCRemoteSwiftPackageReference "ProgressHUD" */;
+			productName = ProgressHUD;
 		};
 /* End XCSwiftPackageProductDependency section */
 

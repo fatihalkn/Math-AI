@@ -53,7 +53,7 @@ class AskChatTableViewCell: UITableViewCell {
         imageView.contentMode = .scaleAspectFit
         imageView.clipsToBounds = true
         imageView.tintColor = .black
-        imageView.image = UIImage(systemName: "person")
+        imageView.image = .person
         return imageView
     }()
     
@@ -71,11 +71,12 @@ extension AskChatTableViewCell {
         chatTextLabel.text = message
         if isUser {
             bubleView.backgroundColor = .systemBlue
+            profileImageView.image = .person
             imageLeading.isActive = true
             textLeading.isActive = true
         } else {
             bubleView.backgroundColor = .systemGray
-            profileImageView.image = .cameraGeneral
+            profileImageView.image = .robot
             imageLeading.isActive = true
             textLeading.isActive = true
         }

@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import ProgressHUD
 
 class AskSubjectViewController: UIViewController {
     
@@ -45,17 +46,29 @@ class AskSubjectViewController: UIViewController {
     }
     
     @objc func clickedCreatedButton() {
-        askViewModel.sendAskPromtText(ask: askSubjectView.askTextView.text, languages: askSubjectView.dropDownButton.titleLabel?.text ?? "BOŞ") { [weak self] response in
-            guard let self = self else { return }
-            if let responseText = response {
-                self.navigateToChatView(with: responseText)
-            }
+        guard let question = askSubjectView.askTextView.text else { return }
+        guard let language = askSubjectView.dropDownButton.titleLabel?.text else { return }
+        let systemContent = "Sen Kullanıcıya Herhangi bir konuda size yardımcı olabilirsin. "
+        print(language)
+        self.askSubjectView.showLoading(text: "", type: .activityIndicator, interaction: false)
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
+            self.askViewModel.sendAskPromtText(ask: question, languages: language, systemContent: systemContent) { resposne in
+                self.askSubjectView.removeLoading()
+        if let responseText = resposne {
+            self.navigateToChatView(with: question, response: responseText,languages: language, systemContent: systemContent)
         }
     }
+        }
+                
+    }
     
-    func navigateToChatView(with message: String) {
-        let chatVC = AskChatViewController()
-        chatVC.askChatViewModel.addChatMessage(message)
+    func navigateToChatView(with question: String, response: String, languages: String, systemContent: String ) {
+        let chatVC = ChatViewController()
+        chatVC.askChatViewModel.addChatMessage(question)
+        chatVC.askChatViewModel.addChatMessage(response)
+        chatVC.systemContent = systemContent
+        chatVC.language = languages
         navigationController?.pushViewController(chatVC, animated: true)
     }
     
