@@ -151,16 +151,20 @@ extension TopicsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         let itemType = topicsViewModel.topics[indexPath.section].topics[indexPath.row].type
+        let itemTitle = topicsViewModel.topics[indexPath.section].topics[indexPath.row].title
         switch itemType {
         case .ask:
-            let itemTitle = topicsViewModel.topics[indexPath.section].topics[indexPath.row].title
             let vc = AskSubjectViewController()
             vc.title = itemTitle
             navigationController?.pushViewController(vc, animated: true)
         case .explain:
-            print("soru")
+            let vc = ExplainViewController()
+            vc.title = itemTitle
+            navigationController?.pushViewController(vc, animated: true)
         case .knowledgeCompetition:
-            print("soru")
+            let vc = KnowledgeCompetitionViewController()
+            vc.title = itemTitle
+            navigationController?.pushViewController(vc, animated: true)
         case .attempt:
             print("soru")
         case .poem:

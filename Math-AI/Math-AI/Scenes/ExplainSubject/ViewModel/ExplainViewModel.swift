@@ -1,16 +1,16 @@
 //
-//  AskSubjectViewModel.swift
+//  ExplainViewModel.swift
 //  Math-AI
 //
-//  Created by Fatih on 18.06.2024.
+//  Created by Fatih on 20.06.2024.
 //
 
 import Foundation
 
-class AskSubjectViewModel {
+class ExplainViewModel {
     
-    var askAnswers: [String] = []
-    var languages: [AskSubjectModel] = []
+    var languages: [ExplainModel] = []
+    var explainAnswer: [String] = []
     
     init() {
         let languagesArray = [
@@ -29,28 +29,26 @@ class AskSubjectViewModel {
                     "Welsh", "Wu"
                 ]
         
-        languages = languagesArray.map({AskSubjectModel(languags: $0)})
+        languages = languagesArray.map({ExplainModel(languages: $0)})
     }
     
     
-    
-    func sendAskPromtText(ask: String, languages: String, systemContent: String,completion: @escaping (String?) -> Void) {
+    func sendExplainPromptText(explain: String, languages: String, systemContent: String, complation: @escaping (String?) -> (Void)) {
         let model = "gpt-3.5-turbo"
         let message = [
             Message(role: .system, content: systemContent),
-            Message(role: .user, content: "SORU: \(ask) DİL: \(languages)")
+            Message(role: .user, content: "KONU: \(explain), DİL: \(languages)")
         ]
-    
-        NetworkService.shared.sendChatRequest(model: model, messages: message) { (response: Result< ChatResponseModel, Error>) in
+        
+        NetworkService.shared.sendChatRequest(model: model, messages: message) { (response: Result<ChatResponseModel, Error>) in
             switch response {
             case .success(let success):
-                if let choices = success.choices, let firstChose = choices.first {
-                    self.askAnswers = choices.compactMap({$0.message?.content})
-                    completion(firstChose.message?.content)
-                    print(firstChose.message?.content ?? "")
+                if let choise = success.choices, let firstChose = choise.first {
+                    self.explainAnswer = choise.compactMap({$0.message?.content})
+                    complation(firstChose.message?.content)
                 }
             case .failure(let failure):
-                completion(nil)
+                complation(nil)
                 print("İSTEK BAŞARISIZ \(failure)")
             }
         }

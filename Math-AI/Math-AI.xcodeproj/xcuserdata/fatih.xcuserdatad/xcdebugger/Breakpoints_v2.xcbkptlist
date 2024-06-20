@@ -36,5 +36,53 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "EF9F6395-A342-4618-A378-46F189F9A7C5"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Math-AI/Scenes/KnowledgeCompetition/ViewController/KnowledgeCompetitionLanguagesViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "74"
+            endingLineNumber = "74"
+            landmarkName = "collectionView(_:didSelectItemAt:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "EF9F6395-A342-4618-A378-46F189F9A7C5 - 40be48e8d6b51f5d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Math_AI.KnowledgeCompetitionLanguagesViewController.collectionView(_: __C.UICollectionView, didSelectItemAt: Foundation.IndexPath) -&gt; ()"
+                  moduleName = "Math-AI"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/fatih/Desktop/GITHUB%20/Math-AI/Math-AI/Math-AI/Scenes/KnowledgeCompetition/ViewController/KnowledgeCompetitionLanguagesViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "74"
+                  endingLineNumber = "74"
+                  offsetFromSymbolStart = "544">
+               </Location>
+               <Location
+                  uuid = "EF9F6395-A342-4618-A378-46F189F9A7C5 - 40be48e8d6b51f5d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Math_AI.KnowledgeCompetitionLanguagesViewController.collectionView(_: __C.UICollectionView, didSelectItemAt: Foundation.IndexPath) -&gt; ()"
+                  moduleName = "Math-AI"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/fatih/Desktop/GITHUB%20/Math-AI/Math-AI/Math-AI/Scenes/KnowledgeCompetition/ViewController/KnowledgeCompetitionLanguagesViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "74"
+                  endingLineNumber = "74"
+                  offsetFromSymbolStart = "508">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

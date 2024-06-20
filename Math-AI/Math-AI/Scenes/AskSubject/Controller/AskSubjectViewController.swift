@@ -14,7 +14,6 @@ class AskSubjectViewController: UIViewController {
     //MARK: - Properties
     var askSubjectView = AskSubjectView()
     var askViewModel = AskSubjectViewModel()
-    var askChatView = AskChatView()
     
     //MARK: - Life Cycle Methods
     override func viewDidLoad() {
@@ -65,8 +64,8 @@ class AskSubjectViewController: UIViewController {
     
     func navigateToChatView(with question: String, response: String, languages: String, systemContent: String ) {
         let chatVC = ChatViewController()
-        chatVC.askChatViewModel.addChatMessage(question)
-        chatVC.askChatViewModel.addChatMessage(response)
+        chatVC.chatViewModel.addChatMessage(question)
+        chatVC.chatViewModel.addChatMessage(response)
         chatVC.systemContent = systemContent
         chatVC.language = languages
         navigationController?.pushViewController(chatVC, animated: true)

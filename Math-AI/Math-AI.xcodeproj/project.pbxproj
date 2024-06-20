@@ -54,6 +54,24 @@
 		3DF7D5212C235AB300C950AD /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 3DF7D5202C235AB300C950AD /* IQKeyboardManagerSwift */; };
 		3DF7D5242C235ABF00C950AD /* ProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 3DF7D5232C235ABF00C950AD /* ProgressHUD */; };
 		3DF7D5272C235F3B00C950AD /* Extantion+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF7D5262C235F3B00C950AD /* Extantion+UIView.swift */; };
+		3DF7D52D2C24443E00C950AD /* ExplainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF7D52C2C24443E00C950AD /* ExplainView.swift */; };
+		3DF7D52F2C2445CB00C950AD /* ExplainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF7D52E2C2445CB00C950AD /* ExplainViewController.swift */; };
+		3DF7D5312C24475000C950AD /* ExplainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF7D5302C24475000C950AD /* ExplainViewModel.swift */; };
+		3DF7D5332C244A5E00C950AD /* ExplainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF7D5322C244A5E00C950AD /* ExplainModel.swift */; };
+		3DF7D5352C244AA600C950AD /* ExplainLanguagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF7D5342C244AA600C950AD /* ExplainLanguagesView.swift */; };
+		3DF7D5392C244B9500C950AD /* ExplainChoseLanguagesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF7D5382C244B9500C950AD /* ExplainChoseLanguagesCell.swift */; };
+		3DF7D53B2C244C1200C950AD /* ExplainChoseLanguagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF7D53A2C244C1200C950AD /* ExplainChoseLanguagesViewController.swift */; };
+		3DF7D5422C245C4E00C950AD /* KnowledgeCompetitionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF7D5412C245C4E00C950AD /* KnowledgeCompetitionView.swift */; };
+		3DF7D5442C245E4700C950AD /* KnowledgeCompetitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF7D5432C245E4700C950AD /* KnowledgeCompetitionViewController.swift */; };
+		3DF7D5462C2463C900C950AD /* KnowledgeCompetitionDifficultyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF7D5452C2463C900C950AD /* KnowledgeCompetitionDifficultyModel.swift */; };
+		3DF7D5482C24653C00C950AD /* KnowledgeCompetitionLanguagesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF7D5472C24653C00C950AD /* KnowledgeCompetitionLanguagesModel.swift */; };
+		3DF7D54A2C24656500C950AD /* KnowledgeCompetitionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF7D5492C24656500C950AD /* KnowledgeCompetitionViewModel.swift */; };
+		3DF7D54C2C246A1800C950AD /* KnowledgeCompetitionLanguageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF7D54B2C246A1800C950AD /* KnowledgeCompetitionLanguageView.swift */; };
+		3DF7D54E2C246A9800C950AD /* KnowledgeCompetitionLanguageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF7D54D2C246A9800C950AD /* KnowledgeCompetitionLanguageCell.swift */; };
+		3DF7D5502C246C9400C950AD /* KnowledgeCompetitionLanguagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF7D54F2C246C9400C950AD /* KnowledgeCompetitionLanguagesViewController.swift */; };
+		3DF7D5522C24717900C950AD /* KnowledgeCompetitionDifficultyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF7D5512C24717900C950AD /* KnowledgeCompetitionDifficultyView.swift */; };
+		3DF7D5542C2471CE00C950AD /* KnowledgeCompetitionDifficultyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF7D5532C2471CE00C950AD /* KnowledgeCompetitionDifficultyCell.swift */; };
+		3DF7D5562C24720200C950AD /* KnowledgeCompetitionDifficultyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF7D5552C24720200C950AD /* KnowledgeCompetitionDifficultyViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -102,6 +120,24 @@
 		3DF7D51B2C22251400C950AD /* ChatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTableViewCell.swift; sourceTree = "<group>"; };
 		3DF7D51D2C2231DF00C950AD /* ChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
 		3DF7D5262C235F3B00C950AD /* Extantion+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extantion+UIView.swift"; sourceTree = "<group>"; };
+		3DF7D52C2C24443E00C950AD /* ExplainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplainView.swift; sourceTree = "<group>"; };
+		3DF7D52E2C2445CB00C950AD /* ExplainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplainViewController.swift; sourceTree = "<group>"; };
+		3DF7D5302C24475000C950AD /* ExplainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplainViewModel.swift; sourceTree = "<group>"; };
+		3DF7D5322C244A5E00C950AD /* ExplainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplainModel.swift; sourceTree = "<group>"; };
+		3DF7D5342C244AA600C950AD /* ExplainLanguagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplainLanguagesView.swift; sourceTree = "<group>"; };
+		3DF7D5382C244B9500C950AD /* ExplainChoseLanguagesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplainChoseLanguagesCell.swift; sourceTree = "<group>"; };
+		3DF7D53A2C244C1200C950AD /* ExplainChoseLanguagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplainChoseLanguagesViewController.swift; sourceTree = "<group>"; };
+		3DF7D5412C245C4E00C950AD /* KnowledgeCompetitionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KnowledgeCompetitionView.swift; sourceTree = "<group>"; };
+		3DF7D5432C245E4700C950AD /* KnowledgeCompetitionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KnowledgeCompetitionViewController.swift; sourceTree = "<group>"; };
+		3DF7D5452C2463C900C950AD /* KnowledgeCompetitionDifficultyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KnowledgeCompetitionDifficultyModel.swift; sourceTree = "<group>"; };
+		3DF7D5472C24653C00C950AD /* KnowledgeCompetitionLanguagesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KnowledgeCompetitionLanguagesModel.swift; sourceTree = "<group>"; };
+		3DF7D5492C24656500C950AD /* KnowledgeCompetitionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KnowledgeCompetitionViewModel.swift; sourceTree = "<group>"; };
+		3DF7D54B2C246A1800C950AD /* KnowledgeCompetitionLanguageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KnowledgeCompetitionLanguageView.swift; sourceTree = "<group>"; };
+		3DF7D54D2C246A9800C950AD /* KnowledgeCompetitionLanguageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KnowledgeCompetitionLanguageCell.swift; sourceTree = "<group>"; };
+		3DF7D54F2C246C9400C950AD /* KnowledgeCompetitionLanguagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KnowledgeCompetitionLanguagesViewController.swift; sourceTree = "<group>"; };
+		3DF7D5512C24717900C950AD /* KnowledgeCompetitionDifficultyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KnowledgeCompetitionDifficultyView.swift; sourceTree = "<group>"; };
+		3DF7D5532C2471CE00C950AD /* KnowledgeCompetitionDifficultyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KnowledgeCompetitionDifficultyCell.swift; sourceTree = "<group>"; };
+		3DF7D5552C24720200C950AD /* KnowledgeCompetitionDifficultyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KnowledgeCompetitionDifficultyViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -313,6 +349,7 @@
 		3D5143A92C11C91700C9A3F0 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				3DF7D53C2C245BE800C950AD /* KnowledgeCompetition */,
 				3DF7D5122C2210F500C950AD /* Chat */,
 				3DF7D4FB2C21ADCD00C950AD /* AskSubject */,
 				3DF7D4FC2C21ADE100C950AD /* ExplainSubject */,
@@ -432,6 +469,10 @@
 		3DF7D4FC2C21ADE100C950AD /* ExplainSubject */ = {
 			isa = PBXGroup;
 			children = (
+				3DF7D52B2C2443CE00C950AD /* ViewModel */,
+				3DF7D52A2C2443C500C950AD /* ViewController */,
+				3DF7D5292C2443C000C950AD /* View */,
+				3DF7D5282C2443B900C950AD /* Model */,
 			);
 			path = ExplainSubject;
 			sourceTree = "<group>";
@@ -522,6 +563,91 @@
 			path = "Extantion+UIView";
 			sourceTree = "<group>";
 		};
+		3DF7D5282C2443B900C950AD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3DF7D5322C244A5E00C950AD /* ExplainModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3DF7D5292C2443C000C950AD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3DF7D52C2C24443E00C950AD /* ExplainView.swift */,
+				3DF7D5342C244AA600C950AD /* ExplainLanguagesView.swift */,
+				3DF7D5382C244B9500C950AD /* ExplainChoseLanguagesCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3DF7D52A2C2443C500C950AD /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				3DF7D52E2C2445CB00C950AD /* ExplainViewController.swift */,
+				3DF7D53A2C244C1200C950AD /* ExplainChoseLanguagesViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		3DF7D52B2C2443CE00C950AD /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				3DF7D5302C24475000C950AD /* ExplainViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		3DF7D53C2C245BE800C950AD /* KnowledgeCompetition */ = {
+			isa = PBXGroup;
+			children = (
+				3DF7D5402C245C3000C950AD /* Model */,
+				3DF7D53F2C245C2800C950AD /* ViewController */,
+				3DF7D53E2C245C1F00C950AD /* ViewModel */,
+				3DF7D53D2C245C0C00C950AD /* View */,
+			);
+			path = KnowledgeCompetition;
+			sourceTree = "<group>";
+		};
+		3DF7D53D2C245C0C00C950AD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3DF7D5412C245C4E00C950AD /* KnowledgeCompetitionView.swift */,
+				3DF7D54B2C246A1800C950AD /* KnowledgeCompetitionLanguageView.swift */,
+				3DF7D54D2C246A9800C950AD /* KnowledgeCompetitionLanguageCell.swift */,
+				3DF7D5512C24717900C950AD /* KnowledgeCompetitionDifficultyView.swift */,
+				3DF7D5532C2471CE00C950AD /* KnowledgeCompetitionDifficultyCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3DF7D53E2C245C1F00C950AD /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				3DF7D5492C24656500C950AD /* KnowledgeCompetitionViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		3DF7D53F2C245C2800C950AD /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				3DF7D5432C245E4700C950AD /* KnowledgeCompetitionViewController.swift */,
+				3DF7D54F2C246C9400C950AD /* KnowledgeCompetitionLanguagesViewController.swift */,
+				3DF7D5552C24720200C950AD /* KnowledgeCompetitionDifficultyViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		3DF7D5402C245C3000C950AD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3DF7D5452C2463C900C950AD /* KnowledgeCompetitionDifficultyModel.swift */,
+				3DF7D5472C24653C00C950AD /* KnowledgeCompetitionLanguagesModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -604,17 +730,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3DF7D52D2C24443E00C950AD /* ExplainView.swift in Sources */,
 				3D5143B72C17265D00C9A3F0 /* ScanningView.swift in Sources */,
+				3DF7D5312C24475000C950AD /* ExplainViewModel.swift in Sources */,
 				3DF7D4E72C20593600C950AD /* TableHeaderViewCell.swift in Sources */,
 				3DF7D5182C22114900C950AD /* ChatViewController.swift in Sources */,
 				3DF7D50B2C21FCD400C950AD /* AskSubjectModel.swift in Sources */,
 				3DF7D50F2C21FEA900C950AD /* AskChoseLanguagesView.swift in Sources */,
 				3D5143B92C1726C800C9A3F0 /* ScanningViewController.swift in Sources */,
 				3D3B84F72C186777002AC3C2 /* LanguagesModel.swift in Sources */,
+				3DF7D5332C244A5E00C950AD /* ExplainModel.swift in Sources */,
 				3D5143BB2C173FCD00C9A3F0 /* ScanOptions.swift in Sources */,
 				3D3B85172C1B56D3002AC3C2 /* NetworkService.swift in Sources */,
 				3D3B85262C1B691D002AC3C2 /* TopicsModel.swift in Sources */,
+				3DF7D53B2C244C1200C950AD /* ExplainChoseLanguagesViewController.swift in Sources */,
 				3D3B851E2C1B6676002AC3C2 /* TopicsView.swift in Sources */,
+				3DF7D5542C2471CE00C950AD /* KnowledgeCompetitionDifficultyCell.swift in Sources */,
 				3D5143932C11BEE100C9A3F0 /* AppDelegate.swift in Sources */,
 				3DF7D51E2C2231DF00C950AD /* ChatViewModel.swift in Sources */,
 				3D5143952C11BEE100C9A3F0 /* SceneDelegate.swift in Sources */,
@@ -624,10 +755,17 @@
 				3D3B85242C1B6908002AC3C2 /* TopicsViewModel.swift in Sources */,
 				3DF7D5042C21AF0A00C950AD /* AskSubjectView.swift in Sources */,
 				3DF7D4F72C207E0C00C950AD /* SubjectTopics+CoreDataClass.swift in Sources */,
+				3DF7D5392C244B9500C950AD /* ExplainChoseLanguagesCell.swift in Sources */,
 				3D5143A72C11C08700C9A3F0 /* CameraViewController.swift in Sources */,
+				3DF7D54A2C24656500C950AD /* KnowledgeCompetitionViewModel.swift in Sources */,
+				3DF7D54C2C246A1800C950AD /* KnowledgeCompetitionLanguageView.swift in Sources */,
+				3DF7D5352C244AA600C950AD /* ExplainLanguagesView.swift in Sources */,
+				3DF7D5502C246C9400C950AD /* KnowledgeCompetitionLanguagesViewController.swift in Sources */,
 				3D5143B02C11C96E00C9A3F0 /* CameraView.swift in Sources */,
+				3DF7D52F2C2445CB00C950AD /* ExplainViewController.swift in Sources */,
 				3DF7D4F12C2073A500C950AD /* CoreDataModel.swift in Sources */,
 				3D3B84FD2C1873AD002AC3C2 /* LanguagesCollectionViewCell.swift in Sources */,
+				3DF7D5422C245C4E00C950AD /* KnowledgeCompetitionView.swift in Sources */,
 				3DF7D5112C21FFA400C950AD /* AskChoseLanguagesCell.swift in Sources */,
 				3D3B84F52C186677002AC3C2 /* LanguagesView.swift in Sources */,
 				3DF7D5092C21FC8100C950AD /* AskSubjectViewModel.swift in Sources */,
@@ -637,14 +775,20 @@
 				3DF7D50D2C21FE6800C950AD /* AskChoseLanguagesViewController.swift in Sources */,
 				3DF7D4F82C207E0C00C950AD /* SubjectTopics+CoreDataProperties.swift in Sources */,
 				3D3B852A2C1B6D6F002AC3C2 /* TopicsTableViewCell.swift in Sources */,
+				3DF7D5442C245E4700C950AD /* KnowledgeCompetitionViewController.swift in Sources */,
+				3DF7D5482C24653C00C950AD /* KnowledgeCompetitionLanguagesModel.swift in Sources */,
 				3DF7D4E32C1C493500C950AD /* TableViewHeaderView.swift in Sources */,
+				3DF7D5562C24720200C950AD /* KnowledgeCompetitionDifficultyViewController.swift in Sources */,
 				3D3B84EE2C17CB23002AC3C2 /* LanguagesViewController.swift in Sources */,
+				3DF7D5462C2463C900C950AD /* KnowledgeCompetitionDifficultyModel.swift in Sources */,
 				3DF7D4F42C207DC700C950AD /* FavoriteTopicsDataModel.xcdatamodeld in Sources */,
 				3D3B85152C1B48EB002AC3C2 /* NetworkConstants.swift in Sources */,
 				3DF7D5272C235F3B00C950AD /* Extantion+UIView.swift in Sources */,
 				3D3B85202C1B668F002AC3C2 /* TopicsViewController.swift in Sources */,
+				3DF7D54E2C246A9800C950AD /* KnowledgeCompetitionLanguageCell.swift in Sources */,
 				3DF7D51A2C22118B00C950AD /* ChatView.swift in Sources */,
 				3D3B85032C190905002AC3C2 /* TabbarController.swift in Sources */,
+				3DF7D5522C24717900C950AD /* KnowledgeCompetitionDifficultyView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

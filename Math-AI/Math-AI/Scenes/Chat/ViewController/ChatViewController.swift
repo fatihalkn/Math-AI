@@ -11,8 +11,8 @@ import UIKit
 class ChatViewController: UIViewController {
     
     //MARK: - Properties
-    var askChatView = AskChatView()
-    var askChatViewModel = ChatViewModel()
+    var chatView = ChatView()
+    var chatViewModel = ChatViewModel()
     
     var systemContent: String?
     var language: String?
@@ -27,23 +27,23 @@ class ChatViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        askChatView.askChatTableView.reloadData()
+        chatView.askChatTableView.reloadData()
     }
     
     override func loadView() {
         super.loadView()
-        view = askChatView
+        view = chatView
     }
     
     func setupRegister() {
-        askChatView.askChatTableView.register(AskChatTableViewCell.self, forCellReuseIdentifier: AskChatTableViewCell.identifier)
+        chatView.askChatTableView.register(AskChatTableViewCell.self, forCellReuseIdentifier: AskChatTableViewCell.identifier)
     }
     
     func setupDelegate() {
-        askChatView.askChatTableView.delegate = self
-        askChatView.askChatTableView.dataSource = self
+        chatView.askChatTableView.delegate = self
+        chatView.askChatTableView.dataSource = self
         
-        askChatView.textField.delegate = self
+        chatView.textField.delegate = self
     }
     
     
@@ -53,12 +53,12 @@ class ChatViewController: UIViewController {
 //MARK: - Configure TableView
 extension ChatViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return askChatViewModel.answers.count
+        return chatViewModel.answers.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: AskChatTableViewCell.identifier, for: indexPath) as! AskChatTableViewCell
-        let message = askChatViewModel.answers[indexPath.row]
+        let message = chatViewModel.answers[indexPath.row]
         cell.configureForMassage(message: message, isUser: indexPath.row % 2 == 0)
         return cell
     }
@@ -74,12 +74,12 @@ extension ChatViewController: UITextFieldDelegate {
         guard let text = textField.text, !text.isEmpty else { return false }
         
         textField.text = ""
-        askChatViewModel.sendAskPromtText(ask: text, languages: language ?? "BOŞ", systemContent: systemContent ?? "Boş") { response in
+        chatViewModel.sendAskPromtText(ask: text, languages: language ?? "BOŞ", systemContent: systemContent ?? "Boş") { response in
             if let response = response {
                 DispatchQueue.main.async {
-                    self.askChatViewModel.addChatMessage(text)
-                    self.askChatViewModel.addChatMessage(response)
-                    self.askChatView.askChatTableView.reloadData()
+                    self.chatViewModel.addChatMessage(text)
+                    self.chatViewModel.addChatMessage(response)
+                    self.chatView.askChatTableView.reloadData()
                 }
                 
             } else {

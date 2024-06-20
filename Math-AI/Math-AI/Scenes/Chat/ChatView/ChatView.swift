@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class AskChatView: UIView {
+class ChatView: UIView {
     
     //MARK: - Properties
     
@@ -64,7 +64,7 @@ class AskChatView: UIView {
 }
 
 //MARK: - ConfigureUI
-extension AskChatView {
+extension ChatView {
     func configureUI() {
         backgroundColor = .white
         addSubview(askChatTableView)
